@@ -1,6 +1,6 @@
 {
   "hero": {
-    "badge": "✦ Trusted Since 2014",
+    "badge": "✦ Trusted Since 2013",
     "title": "Strategic Partnerships. Complex Problems Solved.",
     "subtitle": "Customer-first, partner-powered, technology-enabled solutions for enterprise success.",
     "primaryCta": {
@@ -17,12 +17,30 @@
     "subtitle": "Reliable, technology-first partners who deliver measurable outcomes."
   },
   "industries": [
-    { "name": "Healthcare", "icon": "Activity" },
-    { "name": "Financial Services", "icon": "TrendingUp" },
-    { "name": "Retail & E-commerce", "icon": "ShoppingCart" },
-    { "name": "Manufacturing", "icon": "Building2" },
-    { "name": "Education", "icon": "GraduationCap" },
-    { "name": "Government", "icon": "Landmark" }
+    {
+      "name": "Healthcare",
+      "icon": "Activity"
+    },
+    {
+      "name": "Financial Services",
+      "icon": "TrendingUp"
+    },
+    {
+      "name": "Retail & E-commerce",
+      "icon": "ShoppingCart"
+    },
+    {
+      "name": "Manufacturing",
+      "icon": "Building2"
+    },
+    {
+      "name": "Education",
+      "icon": "GraduationCap"
+    },
+    {
+      "name": "Government",
+      "icon": "Landmark"
+    }
   ],
   "services": {
     "heading": "Our Core Services",
@@ -125,10 +143,22 @@
     "heading": "Proven Track Record",
     "description": "Numbers that speak to our commitment and expertise",
     "items": [
-      { "value": "200+", "label": "Projects Delivered" },
-      { "value": "50+", "label": "Enterprise Clients" },
-      { "value": "12+", "label": "Years Experience" },
-      { "value": "95%", "label": "Client Retention" }
+      {
+        "value": "200+",
+        "label": "Projects Delivered"
+      },
+      {
+        "value": "50+",
+        "label": "Enterprise Clients"
+      },
+      {
+        "value": "12+",
+        "label": "Years Experience"
+      },
+      {
+        "value": "95%",
+        "label": "Client Retention"
+      }
     ]
   },
   "cta": {
