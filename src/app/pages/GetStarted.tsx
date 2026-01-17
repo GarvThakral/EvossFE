@@ -1,6 +1,4 @@
-import { useState } from 'react';
-import { CheckCircle, Calendar, Send } from 'lucide-react';
-import { Linkedin, Twitter, Github } from 'lucide-react';
+import { CheckCircle, Calendar, Send, Linkedin, Twitter, Github } from 'lucide-react';
 import { ChangeEvent, FormEvent, useState } from 'react';
 import { usePageConfig } from '../hooks/usePageConfig';
 
