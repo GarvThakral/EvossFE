@@ -1,0 +1,89 @@
+{
+  "hero": {
+    "title": "Let's Build Something Exceptional",
+    "description": "Partner with EvoSS Global to transform your vision into reality. Our enterprise solutions team is ready to discuss your technology challenges.",
+    "primaryCta": {
+      "label": "Schedule a Consultation",
+      "href": "#contact-form"
+    },
+    "secondaryCta": {
+      "label": "Email Our Team",
+      "href": "mailto:enterprise@evossglobal.com"
+    }
+  },
+  "stats": [
+    { "icon": "Building2", "value": "500+", "label": "Enterprise Clients" },
+    { "icon": "Users", "value": "150+", "label": "Expert Team Members" },
+    { "icon": "Award", "value": "10+", "label": "Years of Excellence" },
+    { "icon": "Globe", "value": "25+", "label": "Countries Served" }
+  ],
+  "contactMethods": [
+    {
+      "icon": "Mail",
+      "title": "Email Us",
+      "content": "enterprise@evossglobal.com",
+      "subContent": "Response within 24 hours",
+      "link": "mailto:enterprise@evossglobal.com"
+    },
+    {
+      "icon": "Phone",
+      "title": "Call Us",
+      "content": "+1 (817) 555-0100",
+      "subContent": "Monday - Friday, 9 AM - 6 PM EST",
+      "link": "tel:+18175550100"
+    },
+    {
+      "icon": "MapPin",
+      "title": "Visit Us",
+      "content": "Fort Worth, Texas",
+      "subContent": "Schedule a consultation",
+      "link": "#"
+    }
+  ],
+  "form": {
+    "title": "Request a Consultation",
+    "description": "Fill out the form below and our enterprise team will reach out within one business day",
+    "disclaimer": "By submitting this form, you agree to our privacy policy and consent to being contacted by our enterprise solutions team."
+  },
+  "officeLocations": [
+    {
+      "city": "Fort Worth",
+      "country": "United States",
+      "type": "Global Headquarters",
+      "address": "123 Technology Plaza, Fort Worth, TX 76102"
+    },
+    {
+      "city": "Austin",
+      "country": "United States",
+      "type": "Innovation Center",
+      "address": "456 Innovation Drive, Austin, TX 78701"
+    },
+    {
+      "city": "Bangalore",
+      "country": "India",
+      "type": "Development Hub",
+      "address": "789 Tech Park, Bangalore 560001"
+    }
+  ],
+  "about": {
+    "heading": "About EvoSS Global",
+    "intro": "Founded in 2014 by CEO Srinivas Varadarajan, EvoSS Global has evolved from a visionary startup into a global leader in enterprise software solutions. Our journey is defined by unwavering commitment to client success and technological innovation.",
+    "details": "We serve Fortune 500 companies, high-growth startups, and government agencies across 25+ countries. Our customer-first, partner-powered, technology-enabled approach has helped organizations transform their digital infrastructure and achieve measurable business outcomes.",
+    "metrics": [
+      { "value": "98%", "label": "Client Satisfaction Rate" },
+      { "value": "$2B+", "label": "Client Value Delivered" }
+    ],
+    "socials": [
+      { "label": "LinkedIn", "url": "https://linkedin.com" },
+      { "label": "Twitter", "url": "https://twitter.com" },
+      { "label": "GitHub", "url": "https://github.com" }
+    ]
+  ],
+  "support": [
+    { "title": "Business Hours", "lines": ["Monday - Friday", "9:00 AM - 6:00 PM EST"] },
+    { "title": "Enterprise Support", "lines": ["24/7 Support Available", "support@evossglobal.com"] },
+    { "title": "Emergency Hotline", "lines": ["For Critical Issues", "+1 (817) 555-0199"] }
+  ]
+  ,
+  "officeIntro": "With offices across continents, we're always close to our clients",
+}

@@ -1,0 +1,151 @@
+{
+  "hero": {
+    "badge": "✦ Trusted Since 2014",
+    "title": "Strategic Partnerships. Complex Problems Solved.",
+    "subtitle": "Customer-first, partner-powered, technology-enabled solutions for enterprise success.",
+    "primaryCta": {
+      "label": "Schedule Free Consultation",
+      "href": "/get-started"
+    },
+    "secondaryCta": {
+      "label": "Explore Our Services",
+      "href": "/services"
+    }
+  },
+  "trustBar": {
+    "heading": "Trusted by Leading Organizations Across Industries",
+    "subtitle": "Reliable, technology-first partners who deliver measurable outcomes."
+  },
+  "industries": [
+    { "name": "Healthcare", "icon": "Activity" },
+    { "name": "Financial Services", "icon": "TrendingUp" },
+    { "name": "Retail & E-commerce", "icon": "ShoppingCart" },
+    { "name": "Manufacturing", "icon": "Building2" },
+    { "name": "Education", "icon": "GraduationCap" },
+    { "name": "Government", "icon": "Landmark" }
+  ],
+  "services": {
+    "heading": "Our Core Services",
+    "description": "Comprehensive technology solutions tailored to your business needs",
+    "items": [
+      {
+        "icon": "Smartphone",
+        "title": "Mobile Development",
+        "description": "Native and cross-platform mobile applications built with cutting-edge technology for iOS and Android.",
+        "linkLabel": "Learn more",
+        "link": "/services"
+      },
+      {
+        "icon": "Eye",
+        "title": "Computer Vision",
+        "description": "Advanced AI-powered visual recognition and analysis systems for intelligent automation.",
+        "linkLabel": "Learn more",
+        "link": "/services"
+      },
+      {
+        "icon": "Lightbulb",
+        "title": "Product R&D",
+        "description": "End-to-end product development from ideation to market launch with expert guidance.",
+        "linkLabel": "Learn more",
+        "link": "/services"
+      }
+    ]
+  },
+  "products": {
+    "heading": "Our Core Products",
+    "description": "Innovative solutions designed to accelerate your digital transformation",
+    "items": [
+      {
+        "name": "AppExe",
+        "tagline": "Zero-Programming Mobile Platform",
+        "description": "Build powerful mobile applications without writing a single line of code. Perfect for rapid prototyping and MVP development.",
+        "features": [
+          "Drag-and-drop interface",
+          "Pre-built templates",
+          "Instant deployment",
+          "Cloud hosting included"
+        ],
+        "image": "https://images.unsplash.com/photo-1762341119237-98df67c9c3c9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBhcHAlMjBkZXZlbG9wbWVudCUyMHNjcmVlbnxlbnwxfHx8fDE3Njc5NDQ5MzR8MA&ixlib=rb-4.1.0&q=80&w=1080"
+      },
+      {
+        "name": "UncannyCV",
+        "tagline": "Computer Vision Suite",
+        "description": "Enterprise-grade computer vision API for object detection, facial recognition, and image analysis at scale.",
+        "features": [
+          "Real-time processing",
+          "99.9% accuracy",
+          "Custom model training",
+          "RESTful API"
+        ],
+        "image": "https://images.unsplash.com/photo-1649877508777-1554357604eb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb21wdXRlciUyMHZpc2lvbiUyMEFJJTIwdGVjaG5vbG9neXxlbnwxfHx8fDE3Njc5NDQ5MzR8MA&ixlib=rb-4.1.0&q=80&w=1080"
+      },
+      {
+        "name": "SmartDocs",
+        "tagline": "Intelligent Document Management",
+        "description": "AI-powered document processing and management system with automated extraction and classification.",
+        "features": [
+          "OCR technology",
+          "Smart categorization",
+          "Compliance ready",
+          "Secure cloud storage"
+        ],
+        "image": "https://images.unsplash.com/photo-1765502318157-61d9bb6579e0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkb2N1bWVudCUyMG1hbmFnZW1lbnQlMjBzeXN0ZW18ZW58MXx8fHwxNzY3OTI4MjMwfDA&ixlib=rb-4.1.0&q=80&w=1080"
+      }
+    ]
+  },
+  "blog": {
+    "heading": "Latest Insights",
+    "description": "Expert perspectives on technology trends, best practices, and digital transformation",
+    "buttonLabel": "View All Articles",
+    "items": [
+      {
+        "title": "The Future of Enterprise AI: Transforming Business Operations",
+        "excerpt": "How artificial intelligence and computer vision are revolutionizing enterprise workflows, driving competitive advantages, and reshaping industry standards.",
+        "image": "https://images.unsplash.com/photo-1744640326166-433469d102f2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhcnRpZmljaWFsJTIwaW50ZWxsaWdlbmNlJTIwYnVzaW5lc3N8ZW58MXx8fHwxNzY3OTQ0OTM1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+        "date": "January 8, 2026",
+        "category": "AI & Machine Learning"
+      },
+      {
+        "title": "Mobile-First Development: Building Apps That Scale",
+        "excerpt": "Essential strategies for creating high-performance mobile applications that deliver exceptional user experiences and drive business growth.",
+        "image": "https://images.unsplash.com/photo-1732121041218-2050c914567b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBkZXZlbG9wbWVudCUyMHdvcmtzcGFjZXxlbnwxfHx8fDE3Njc5NDQ5MzV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+        "date": "January 5, 2026",
+        "category": "Mobile Development"
+      },
+      {
+        "title": "Building High-Performance Enterprise Technology Teams",
+        "excerpt": "Best practices for assembling, managing, and scaling technology teams in enterprise environments to deliver world-class solutions.",
+        "image": "https://images.unsplash.com/photo-1716703432455-3045789de738?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbnRlcnByaXNlJTIwdGVjaG5vbG9neSUyMHRlYW18ZW58MXx8fHwxNzY3OTQ0OTM1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+        "date": "December 30, 2025",
+        "category": "Enterprise Technology"
+      }
+    ]
+  },
+  "metrics": {
+    "heading": "Proven Track Record",
+    "description": "Numbers that speak to our commitment and expertise",
+    "items": [
+      { "value": "200+", "label": "Projects Delivered" },
+      { "value": "50+", "label": "Enterprise Clients" },
+      { "value": "12+", "label": "Years Experience" },
+      { "value": "95%", "label": "Client Retention" }
+    ]
+  },
+  "cta": {
+    "heading": "Ready to Transform Your Business?",
+    "description": "Let's discuss your needs and explore how we can help you achieve your goals. No commitment required.",
+    "primaryCta": {
+      "label": "Start Your Project",
+      "href": "/get-started"
+    },
+    "secondaryCta": {
+      "label": "Discuss Your Needs",
+      "href": "/contact"
+    },
+    "footnotes": [
+      "No commitment consultation",
+      "12+ years in business",
+      "Global partner network"
+    ]
+  }
+}
