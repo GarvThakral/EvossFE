@@ -1,8 +1,8 @@
 {
   "hero": {
-    "badge": "✦ Trusted Since 2013",
-    "title": "Vision Intelligence. From Data to Action.",
-    "subtitle": "Custom computer vision solutions designed for real-world business challenges.",
+    "badge": "✦ Trusted Since 2014",
+    "title": "Unlocking the Power of Visual Intelligence",
+    "subtitle": "EvoSS Global is a trusted services company delivering advanced AI solutions, with a focus on computer vision and image-processing workflows.",
     "primaryCta": {
       "label": "Schedule Free Consultation",
       "href": "/get-started"
@@ -13,8 +13,8 @@
     }
   },
   "trustBar": {
-    "heading": "Trusted by Leading Organizations Across Industries",
-    "subtitle": "Reliable, technology-first partners who deliver measurable outcomes."
+    "heading": "Trusted by Businesses Across Industries",
+    "subtitle": "Helping teams automate, optimize, and make better decisions with vision intelligence."
   },
   "industries": [
     {
@@ -43,57 +43,79 @@
     }
   ],
   "services": {
-    "heading": "Our Core Services",
-    "description": "Comprehensive technology solutions tailored to your business needs",
+    "heading": "What We Do",
+    "description": "You bring the idea, we take it to deployment, delivering end-to-end vision intelligence services including front- and back-end integration, comprehensive data labeling, model training and optimization, and production-ready portals built for online deployment and revenue generation.",
     "items": [
       {
         "icon": "Smartphone",
-        "title": "Mobile Development",
-        "description": "Native and cross-platform mobile applications built with cutting-edge technology for iOS and Android.",
-        "linkLabel": "Learn more",
-        "link": "/services"
-      },
-      {
-        "icon": "Eye",
         "title": "Computer Vision",
         "description": "Advanced AI-powered visual recognition and analysis systems for intelligent automation.",
         "linkLabel": "Learn more",
         "link": "/services"
       },
       {
+        "icon": "Eye",
+        "title": "Model Training and Optimization",
+        "description": "Our team leverages state-of-the-art computer vision models and training techniques to optimize accuracy, latency, and scalability based on your operational requirements.",
+        "linkLabel": "Learn more",
+        "link": "/services"
+      },
+      {
         "icon": "Lightbulb",
-        "title": "Product R&D",
-        "description": "End-to-end product development from ideation to market launch with expert guidance.",
+        "title": "Labeling",
+        "description": "We provide an industry-leading labeling platform paired with expert human labeling services that deliver high-quality training data quickly and cost-effectively.",
+        "linkLabel": "Learn more",
+        "link": "/services"
+      },
+      {
+        "icon": "Lightbulb",
+        "title": "Full-Stack Development & Integration",
+        "description": "We design and build intuitive user interfaces and robust front- and back-end systems, seamlessly integrating your computer vision solution into production-ready applications and workflows.",
+        "linkLabel": "Learn more",
+        "link": "/services"
+      },
+      {
+        "icon": "Lightbulb",
+        "title": "AI-Powered Workflow Orchestration",
+        "description": "Our AI agents orchestrate complex workflows, choosing the right models for your data and resource needs to improve speed, accuracy, and efficiency.",
         "linkLabel": "Learn more",
         "link": "/services"
       }
     ]
   },
   "products": {
-    "heading": "Our Core Products",
-    "description": "Innovative solutions designed to accelerate your digital transformation",
+    "heading": "Product & Platform Offerings",
+    "description": "One platform for vision intelligence and beyond.",
     "items": [
       {
-        "name": "AppExe",
-        "tagline": "Zero-Programming Mobile Platform",
-        "description": "Build powerful mobile applications without writing a single line of code. Perfect for rapid prototyping and MVP development.",
+        "name": "Tiger",
+        "tagline": "Where vision intelligence becomes scalable AI.",
+        "description": "One stop shop for industry-leading AI-based labeling, model training and optimization platform for individuals as well as teams.",
         "features": [
-          "Drag-and-drop interface",
-          "Pre-built templates",
-          "Instant deployment",
-          "Cloud hosting included"
+          "Customizable workflow management for teams",
+          "Intuitive labeling tool with embedded VLM",
+          "Various choices of base models for training and optimization"
         ],
         "image": "https://images.unsplash.com/photo-1762341119237-98df67c9c3c9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBhcHAlMjBkZXZlbG9wbWVudCUyMHNjcmVlbnxlbnwxfHx8fDE3Njc5NDQ5MzR8MA&ixlib=rb-4.1.0&q=80&w=1080"
       },
       {
-        "name": "UncannyCV",
-        "tagline": "Computer Vision Suite",
-        "description": "Enterprise-grade computer vision API for object detection, facial recognition, and image analysis at scale.",
+        "name": "D2B",
+        "tagline": "Platform to connect clients and drone pilots.",
+        "description": "A marketplace for clients and pilots to be paired to unlock the benefits of diverse applicability for drone services.",
         "features": [
-          "Real-time processing",
-          "99.9% accuracy",
-          "Custom model training",
-          "RESTful API"
+          "For Clients:",
+          "Pilot profiles and discovery",
+          "Pilot selection",
+          "Quote management",
+          "Mission updates",
+          "Efficient handling for deliverables and payment",
+          "For Pilots:",
+          "Quote pricing and analysis",
+          "Resource management",
+          "Equipment management",
+          "Mission planning",
+          "Flight planning and logging",
+          "Efficient handling for deliverables and payment"
         ],
         "image": "https://images.unsplash.com/photo-1649877508777-1554357604eb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb21wdXRlciUyMHZpc2lvbiUyMEFJJTIwdGVjaG5vbG9neXxlbnwxfHx8fDE3Njc5NDQ5MzR8MA&ixlib=rb-4.1.0&q=80&w=1080"
       },
