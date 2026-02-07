@@ -80,6 +80,13 @@
         "description": "Our AI agents orchestrate complex workflows, choosing the right models for your data and resource needs to improve speed, accuracy, and efficiency.",
         "linkLabel": "Learn more",
         "link": "/services"
+      },
+      {
+        "icon": "Lightbulb",
+        "title": "Platform Development Services",
+        "description": "We design and build scalable, production-ready platforms that bring AI and vision solutions to life, handling architecture, integration, and deployment so your product is ready for real users and revenue.",
+        "linkLabel": "Learn more",
+        "link": "/services"
       }
     ]
   },
