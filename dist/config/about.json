@@ -1,0 +1,91 @@
+{
+  "hero": {
+    "kicker": "The Institution",
+    "title": "Engineering the Next Industrial Era.",
+    "subtitle": "Since 2014, EvoSS Global has served as a critical technical partner for entities navigating the complexities of digital transformation."
+  },
+  "leadership": {
+    "imageUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800",
+    "imageAlt": "Srinivas Varadarajan",
+    "roleLabel": "Founder & CEO",
+    "name": "Srinivas Varadarajan",
+    "heading": "A Vision of Persistence",
+    "paragraphs": [
+      "Under the leadership of Srinivas Varadarajan, EvoSS Global was built on a single premise: that enterprise software should be as intuitive as it is powerful.",
+      "\"Our goal was never just to build tools, but to build the digital infrastructure that allows businesses to breathe and grow without technical friction. We act as the invisible engine behind modern innovation.\""
+    ],
+    "stats": [
+      { "value": "12+ Years", "label": "Technical Mastery" },
+      { "value": "Global Focus", "label": "Enterprise Scale" }
+    ]
+  },
+  "methodology": {
+    "kicker": "Our Methodology",
+    "heading": "Partner-Powered. Technology-Enabled.",
+    "items": [
+      {
+        "icon": "Target",
+        "title": "Strategic Auditing",
+        "desc": "We begin with a deep-tissue analysis of your existing technical architecture to identify latent inefficiencies."
+      },
+      {
+        "icon": "Zap",
+        "title": "Rapid Prototyping",
+        "desc": "Using our AppExe engine, we deploy functional MVPs in a fraction of the traditional development cycle."
+      },
+      {
+        "icon": "Shield",
+        "title": "Global Governance",
+        "desc": "Every asset we build is hardened with enterprise-grade security and compliant with international standards."
+      }
+    ]
+  },
+  "timeline": {
+    "kicker": "Chronology",
+    "headingLines": ["The Journey", "So Far."],
+    "description": "A decade of compressing complex technical challenges into streamlined enterprise assets.",
+    "milestones": [
+      {
+        "year": "2014",
+        "title": "The Genesis",
+        "event": "EvoSS Global founded by Srinivas Varadarajan in Fort Worth, TX, with a vision to bridge the gap between legacy systems and mobile-first architecture."
+      },
+      {
+        "year": "2017",
+        "title": "Global Expansion",
+        "event": "Inauguration of the London Strategic Hub. The firm expands its footprint to serve the EMEA financial sector."
+      },
+      {
+        "year": "2020",
+        "title": "AI Integration",
+        "event": "Release of the UncannyCV engine. The firm shifts toward neural-network-driven document and vision analysis."
+      },
+      {
+        "year": "2023",
+        "title": "Market Leadership",
+        "event": "Recognized as a leading technical accelerator. Reached the milestone of 500+ successful enterprise deployments."
+      },
+      {
+        "year": "2026",
+        "title": "Sovereign Future",
+        "event": "EvoSS Global evolves into a Sovereign Tech powerhouse, securing digital infrastructure for global entities across 25 nations."
+      }
+    ]
+  },
+  "globalPresence": {
+    "kicker": "International Footprint",
+    "heading": "Operating in 25+ Sovereign Nations.",
+    "metrics": [
+      { "value": "98%", "label": "Client Retention" },
+      { "value": "150+", "label": "Technical Staff" },
+      { "value": "$2B+", "label": "Value Delivered" },
+      { "value": "24/7", "label": "Global Support" }
+    ]
+  },
+  "cta": {
+    "kicker": "Join the Vanguard",
+    "heading": "Be part of our next decade of innovation.",
+    "buttonLabel": "Consult With Our Experts",
+    "buttonHref": "/contact"
+  }
+}

@@ -1,98 +1,69 @@
 {
   "hero": {
-    "title": "Enterprise Technology Services",
-    "description": "We partner with organizations to deliver innovative technology solutions that drive business transformation and competitive advantage."
+    "kicker": "Our Capabilities",
+    "titleLines": ["Enterprise", "Technology Services."],
+    "subtitle": "Navigating the intersection of strategic intelligence and technical execution for the world's leading organizations."
   },
-  "mainServices": [
+  "services": [
     {
-      "icon": "Smartphone",
-      "title": "Mobile App Development",
-      "description": "End-to-end mobile application development for iOS and Android platforms.",
-      "features": [
-        "Native iOS (Swift) and Android (Kotlin)",
-        "Cross-platform development (React Native, Flutter)",
-        "Progressive Web Apps (PWA)",
-        "Mobile backend and API integration",
-        "App Store optimization and deployment",
-        "Maintenance and continuous updates"
-      ],
-      "technologies": ["Swift", "Kotlin", "React Native", "Flutter", "Firebase", "AWS Amplify"],
-      "image": "https://images.unsplash.com/photo-1633250391894-397930e3f5f2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBhcHAlMjBkZXZlbG9wbWVudHxlbnwxfHx8fDE3Njc3NTcyMjF8MA&ixlib=rb-4.1.0&q=80&w=1080"
+      "id": "01",
+      "category": "Digital Transformation",
+      "title": "Mobile Architecture & Ecosystems",
+      "description": "Engineering scalable, secure mobile ecosystems for the global enterprise. We specialize in cross-platform deployment and legacy system integration.",
+      "features": ["Native Swift/Kotlin Engineering", "Cross-Platform Architecture", "Mobile Backend & API Sync"],
+      "image": "https://images.unsplash.com/photo-1633250391894-397930e3f5f2?auto=format&fit=crop&q=80&w=1200",
+      "ctaLabel": "Inquire for Specs",
+      "ctaHref": "/contact"
     },
     {
-      "icon": "Eye",
-      "title": "Computer Vision Solutions",
-      "description": "Advanced AI-powered visual recognition and analysis systems for intelligent automation.",
-      "features": [
-        "Object detection and classification",
-        "Facial recognition systems",
-        "OCR and document processing",
-        "Quality control automation",
-        "Video analytics and monitoring",
-        "Custom model training"
-      ],
-      "technologies": ["TensorFlow", "PyTorch", "OpenCV", "YOLO", "AWS Rekognition", "Google Cloud Vision"],
-      "image": "https://images.unsplash.com/photo-1649877508777-1554357604eb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb21wdXRlciUyMHZpc2lvbiUyMGFpfGVufDF8fHx8MTc2Nzg2MjA2NHww&ixlib=rb-4.1.0&q=80&w=1080"
+      "id": "02",
+      "category": "Applied Intelligence",
+      "title": "Computer Vision & AI Systems",
+      "description": "Harnessing neural networks to automate high-stakes decision making. Our proprietary models are optimized for real-time inference and accuracy.",
+      "features": ["Neural Object Detection", "Cognitive Document Analysis", "Video Analytics at Scale"],
+      "image": "https://images.unsplash.com/photo-1649877508777-1554357604eb?auto=format&fit=crop&q=80&w=1200",
+      "ctaLabel": "Inquire for Specs",
+      "ctaHref": "/contact"
     },
     {
-      "icon": "Lightbulb",
-      "title": "Product R&D Services",
-      "description": "Complete product development lifecycle from ideation to market launch.",
-      "features": [
-        "Product strategy and roadmap",
-        "UX/UI design and prototyping",
-        "MVP development",
-        "Market validation and testing",
-        "Scalable architecture design",
-        "Go-to-market support"
-      ],
-      "technologies": ["Figma", "Sketch", "React", "Node.js", "Docker", "Kubernetes"],
-      "image": "https://images.unsplash.com/photo-1759752394755-1241472b589d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbnRlcnByaXNlJTIwc29mdHdhcmV8ZW58MXx8fHwxNzY3ODc1NTQxfDA&ixlib=rb-4.1.0&q=80&w=1080"
+      "id": "03",
+      "category": "Product Strategy",
+      "title": "Corporate R&D & Prototyping",
+      "description": "Bridging the gap between conceptualization and market leadership. We deliver rapid R&D cycles that validate complex business hypotheses.",
+      "features": ["UX/UI Systems Design", "MVP Rapid Deployment", "Scalable Cloud Architecture"],
+      "image": "https://images.unsplash.com/photo-1759752394755-1241472b589d?auto=format&fit=crop&q=80&w=1200",
+      "ctaLabel": "Inquire for Specs",
+      "ctaHref": "/contact"
     }
   ],
-  "workflow": {
-    "heading": "Our Partnership Model",
-    "description": "We believe in true partnerships. Here's how we work together to deliver exceptional results.",
+  "engagement": {
+    "heading": "The Engagement Model",
     "steps": [
-      { "step": "01", "title": "Discovery & Planning", "description": "We start by understanding your business objectives, challenges, and requirements through in-depth consultation." },
-      { "step": "02", "title": "Strategy Development", "description": "Our team creates a comprehensive strategy and roadmap tailored to your specific needs and goals." },
-      { "step": "03", "title": "Design & Prototyping", "description": "We develop prototypes and designs for validation before moving to full-scale development." },
-      { "step": "04", "title": "Development & Testing", "description": "Agile development with continuous testing and quality assurance throughout the process." },
-      { "step": "05", "title": "Deployment & Support", "description": "Seamless launch with ongoing support, maintenance, and optimization for continuous improvement." }
-    ]
-  },
-  "industries": {
-    "heading": "Industries We Serve",
-    "description": "Deep expertise across multiple sectors, delivering tailored solutions for unique industry challenges.",
-    "items": [
-      { "name": "Healthcare", "icon": "Shield" },
-      { "name": "Financial Services", "icon": "TrendingUp" },
-      { "name": "Retail & E-commerce", "icon": "Globe" },
-      { "name": "Manufacturing", "icon": "Zap" },
-      { "name": "Education", "icon": "Target" },
-      { "name": "Government", "icon": "Users" }
+      { "step": "01", "title": "Discovery", "desc": "Understanding mission-critical objectives." },
+      { "step": "02", "title": "Strategy", "desc": "Tailoring proprietary roadmap." },
+      { "step": "03", "title": "Execution", "desc": "Engineering and technical deployment." },
+      { "step": "04", "title": "QA", "desc": "Validation and security auditing." },
+      { "step": "05", "title": "Support", "desc": "Long-term ecosystem optimization." }
     ]
   },
   "capabilities": {
-    "heading": "Technical Capabilities",
-    "description": "Comprehensive technology stack and expertise to bring your vision to life",
+    "kicker": "Core Stack",
+    "heading": "Infrastructure & Compliance",
     "items": [
-      "Cloud Architecture (AWS, Azure, GCP)",
-      "Microservices & Containerization",
-      "DevOps & CI/CD",
-      "API Development & Integration",
-      "Data Analytics & BI",
-      "Security & Compliance",
-      "Blockchain Development",
+      "Cloud Architecture",
+      "Microservices",
+      "DevOps CI/CD",
+      "API Integration",
+      "Data Analytics",
+      "ISO Compliance",
+      "Blockchain",
       "IoT Solutions"
     ]
   },
   "cta": {
-    "heading": "Let's Build Something Great Together",
-    "description": "Schedule a no-commitment consultation to discuss your project and explore how we can help.",
-    "primaryCta": {
-      "label": "Start Your Project",
-      "href": "/get-started"
-    }
+    "heading": "Secure your technical advantage.",
+    "buttonLabel": "Initiate Project",
+    "buttonHref": "/get-started"
   }
 }
+

@@ -47,3 +47,28 @@ export async function savePageConfig(
   });
   return handleResponse(response);
 }
+
+export async function uploadAsset(
+  file: File,
+  username: string,
+  password: string,
+  options?: { folder?: string; commitMessage?: string },
+) {
+  const formData = new FormData();
+  formData.append('file', file);
+  if (options?.folder) {
+    formData.append('folder', options.folder);
+  }
+  if (options?.commitMessage) {
+    formData.append('commitMessage', options.commitMessage);
+  }
+
+  const response = await fetch(`${ADMIN_API_URL || ''}/admin/auth/secret/assets`, {
+    method: 'POST',
+    headers: {
+      ...buildAuthHeader(username, password),
+    },
+    body: formData,
+  });
+  return handleResponse(response);
+}

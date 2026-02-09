@@ -7,6 +7,7 @@ export function Navigation() {
   const location = useLocation();
 
   const navLinks = [
+    { path: '/about', label: 'About' },
     { path: '/services', label: 'Services' },
     { path: '/products', label: 'Products' },
     { path: '/blog', label: 'Blog' },

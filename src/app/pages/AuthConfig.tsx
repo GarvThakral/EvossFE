@@ -1,9 +1,10 @@
 import { useMemo, useState } from 'react';
 import { toast } from 'sonner';
-import { loadPageConfig, savePageConfig } from '../services/adminConfig';
+import { loadPageConfig, savePageConfig, uploadAsset } from '../services/adminConfig';
 
 const PAGE_OPTIONS = [
   { key: 'home', label: 'Home' },
+  { key: 'about', label: 'About' },
   { key: 'services', label: 'Services' },
   { key: 'products', label: 'Products' },
   { key: 'get-started', label: 'Get Started' },
@@ -18,6 +19,45 @@ interface ConfigObject {
 }
 type ConfigArray = ConfigValue[];
 
+type ConfigPath = (string | number)[];
+
+const isLikelyImageKey = (path: ConfigPath) => {
+  const last = path[path.length - 1];
+  if (typeof last !== 'string') return false;
+  const key = last.toLowerCase();
+  return (
+    key === 'image' ||
+    key.endsWith('image') ||
+    key.endsWith('imageurl') ||
+    key.endsWith('image_url') ||
+    key === 'logo' ||
+    key.endsWith('logo') ||
+    key.endsWith('logourl') ||
+    key.endsWith('logo_url') ||
+    key === 'avatar' ||
+    key.endsWith('avatar') ||
+    key.endsWith('backgroundimage') ||
+    key.endsWith('background_image')
+  );
+};
+
+const isLikelyVideoKey = (path: ConfigPath) => {
+  const last = path[path.length - 1];
+  if (typeof last !== 'string') return false;
+  const key = last.toLowerCase();
+  return (
+    key === 'video' ||
+    key.endsWith('video') ||
+    key.endsWith('videourl') ||
+    key.endsWith('video_url') ||
+    key.endsWith('mp4') ||
+    key.endsWith('mp4url') ||
+    key.endsWith('mp4_url') ||
+    key.endsWith('webm') ||
+    key.endsWith('webmurl') ||
+    key.endsWith('webm_url')
+  );
+};
 export function AuthConfigPage() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -218,7 +258,12 @@ export function AuthConfigPage() {
 
         <div className="rounded-2xl bg-white shadow border border-slate-100 p-6">
           {config ? (
-            <ConfigForm value={config} onChange={setConfig} />
+            <ConfigForm
+              value={config}
+              onChange={setConfig}
+              context={{ username, password }}
+              path={[]}
+            />
           ) : (
             <p className="text-sm text-slate-500">
               {`Load the ${pageLabel.toLowerCase()} configuration to edit it here.`}
@@ -233,9 +278,13 @@ export function AuthConfigPage() {
 function ConfigForm({
   value,
   onChange,
+  context,
+  path,
 }: {
   value: ConfigObject;
   onChange: (next: ConfigObject) => void;
+  context: { username: string; password: string };
+  path: ConfigPath;
 }) {
   const entries = Object.entries(value);
 
@@ -249,6 +298,8 @@ function ConfigForm({
           <FieldRenderer
             value={fieldValue}
             onChange={(next) => onChange({ ...value, [key]: next })}
+            context={context}
+            path={[...path, key]}
           />
         </div>
       ))}
@@ -259,21 +310,41 @@ function ConfigForm({
 function FieldRenderer({
   value,
   onChange,
+  context,
+  path,
 }: {
   value: ConfigValue;
   onChange: (next: ConfigValue) => void;
+  context: { username: string; password: string };
+  path: ConfigPath;
 }) {
   if (Array.isArray(value)) {
     return (
-      <ArrayEditor arrayValue={value as ConfigArray} onChange={onChange} />
+      <ArrayEditor arrayValue={value as ConfigArray} onChange={onChange} context={context} path={path} />
     );
   }
 
   if (typeof value === 'object' && value !== null) {
     return (
       <div className="p-4 border border-slate-200 rounded-xl bg-slate-50">
-        <ConfigForm value={value as ConfigObject} onChange={onChange as (next: ConfigObject) => void} />
+        <ConfigForm
+          value={value as ConfigObject}
+          onChange={onChange as (next: ConfigObject) => void}
+          context={context}
+          path={path}
+        />
       </div>
+    );
+  }
+
+  if (typeof value === 'string' && (isLikelyImageKey(path) || isLikelyVideoKey(path))) {
+    return (
+      <ImageField
+        value={value}
+        onChange={(next) => onChange(next)}
+        context={context}
+        path={path}
+      />
     );
   }
 
@@ -290,9 +361,13 @@ function FieldRenderer({
 function ArrayEditor({
   arrayValue,
   onChange,
+  context,
+  path,
 }: {
   arrayValue: ConfigArray;
   onChange: (next: ConfigArray) => void;
+  context: { username: string; password: string };
+  path: ConfigPath;
 }) {
   const firstItem = arrayValue[0];
   const isObjectArray = firstItem && typeof firstItem === 'object' && !Array.isArray(firstItem);
@@ -339,6 +414,8 @@ function ArrayEditor({
             <ConfigForm
               value={item as ConfigObject}
               onChange={(next) => handleItemChange(index, next)}
+              context={context}
+              path={[...path, index]}
             />
           </div>
         ))}
@@ -383,4 +460,115 @@ function createBlankValue(example: ConfigValue): ConfigValue {
     return false;
   }
   return '';
+}
+
+function ImageField({
+  value,
+  onChange,
+  context,
+  path,
+}: {
+  value: string;
+  onChange: (next: string) => void;
+  context: { username: string; password: string };
+  path: ConfigPath;
+}) {
+  const [uploading, setUploading] = useState(false);
+  const [localPreview, setLocalPreview] = useState<string | null>(null);
+  const [previewType, setPreviewType] = useState<'image' | 'video'>(() =>
+    isLikelyVideoKey(path) ? 'video' : 'image',
+  );
+
+  const label = typeof path[path.length - 1] === 'string' ? (path[path.length - 1] as string) : 'image';
+  const preview = localPreview || value;
+
+  const onPickFile = async (file: File | null) => {
+    if (!file) return;
+    if (!context.username || !context.password) {
+      toast.error('Enter admin credentials before uploading.');
+      return;
+    }
+    const maxBytes = 6 * 1024 * 1024;
+    if (file.size > maxBytes) {
+      toast.error('Image too large (max 6MB).');
+      return;
+    }
+    setLocalPreview(URL.createObjectURL(file));
+    setPreviewType(file.type.startsWith('video/') ? 'video' : 'image');
+    try {
+      setUploading(true);
+      const result = await uploadAsset(file, context.username, context.password, {
+        folder: 'uploads',
+        commitMessage: `Upload asset for ${label}`,
+      });
+      const assetUrl = result?.url || result?.path;
+      if (typeof result?.resourceType === 'string') {
+        setPreviewType(result.resourceType === 'video' ? 'video' : 'image');
+      }
+      if (!assetUrl || typeof assetUrl !== 'string') {
+        throw new Error('Upload succeeded but no path was returned');
+      }
+      onChange(assetUrl);
+      toast.success('Asset uploaded');
+    } catch (error: any) {
+      console.error(error);
+      toast.error(error?.message || 'Upload failed');
+    } finally {
+      setUploading(false);
+    }
+  };
+
+  return (
+    <div className="space-y-3">
+      <div className="grid md:grid-cols-[160px_1fr] gap-4 items-start">
+        <div className="w-full">
+          <div className="w-full aspect-[4/3] rounded-lg border border-slate-200 bg-slate-100 overflow-hidden flex items-center justify-center">
+            {preview ? (
+              previewType === 'video' ? (
+                <video src={preview} controls className="w-full h-full object-cover" />
+              ) : (
+                <img src={preview} alt={label} className="w-full h-full object-cover" />
+              )
+            ) : (
+              <span className="text-xs text-slate-500">No image</span>
+            )}
+          </div>
+        </div>
+        <div className="space-y-2">
+          <input
+            className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm font-mono"
+            value={value || ''}
+            onChange={(event) => onChange(event.target.value)}
+            placeholder="https://... or /uploads/..."
+          />
+          <div className="flex flex-wrap gap-3 items-center">
+            <label className="text-sm text-slate-700">
+              <span className="inline-flex items-center px-3 py-2 border border-slate-200 rounded-lg cursor-pointer bg-white hover:bg-slate-50">
+                {uploading ? 'Uploading…' : 'Upload image'}
+              </span>
+              <input
+                type="file"
+                accept="image/png,image/jpeg,image/jpg,image/webp,image/gif,video/mp4,video/webm,video/quicktime"
+                className="hidden"
+                onChange={(event) => onPickFile(event.target.files?.[0] ?? null)}
+                disabled={uploading}
+              />
+            </label>
+            <button
+              type="button"
+              className="text-sm text-rose-600 hover:underline disabled:opacity-60"
+              onClick={() => onChange('')}
+              disabled={uploading}
+            >
+              Clear
+            </button>
+          </div>
+          <p className="text-xs text-slate-500">
+            Upload returns a hosted URL (Cloudinary when configured), or a public path like{' '}
+            <span className="font-mono">/uploads/...</span> as fallback.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
 }

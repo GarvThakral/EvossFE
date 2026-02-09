@@ -1,142 +1,66 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { CheckCircle, Code, Zap, Shield, Cloud, ArrowRight } from 'lucide-react';
 import { usePageConfig } from '../hooks/usePageConfig';
-
-const ICONS = {
-  Code,
-  Zap,
-  Shield,
-  Cloud,
-} as const;
-type IconName = keyof typeof ICONS;
-
-const renderIcon = (name?: IconName, className?: string) => {
-  if (!name) return null;
-  const Icon = ICONS[name];
-  if (!Icon) return null;
-  return <Icon className={className} />;
-};
 
 const DEFAULT_PRODUCTS_CONFIG = {
   hero: {
-    title: 'Innovative Products for Modern Businesses',
-    description:
-      'Accelerate your digital transformation with our suite of enterprise-ready products designed to solve real business challenges.',
+    kicker: 'Technical Portfolio',
+    titleLines: ['Proprietary Assets &', 'Technical Accelerators.'],
+    subtitle:
+      'Advanced frameworks designed to compress digital transformation timelines for global entities.',
   },
   products: [
     {
       name: 'AppExe',
-      tagline: 'Zero-Programming Mobile Platform',
+      id: '01',
+      tagline: 'Enterprise Mobility Engine',
       description:
-        'Build powerful mobile applications without writing a single line of code. Perfect for rapid prototyping, MVPs, and enterprise app development.',
-      longDescription:
-        'AppExe revolutionizes mobile app development by providing a comprehensive no-code platform that empowers businesses to create professional mobile applications in days, not months. With an intuitive drag-and-drop interface and pre-built components, you can focus on your business logic while we handle the technical complexity.',
-      features: [
-        'Drag-and-drop visual interface',
-        'Pre-built templates and components',
-        'Real-time preview and testing',
-        'Instant deployment to app stores',
-        'Cloud hosting and CDN included',
-        'Push notifications and analytics',
-        'Backend integration and API connectivity',
-        'Custom branding and white-labeling',
-      ],
-      useCases: [
-        'Rapid MVP development',
-        'Internal enterprise apps',
-        'Customer-facing mobile experiences',
-        'Event and conference apps',
-      ],
-      pricing: 'Starting at $999/month',
-      image:
-        'https://images.unsplash.com/photo-1762341119237-98df67c9c3c9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBhcHAlMjBkZXZlbG9wbWVudCUyMHNjcmVlbnxlbnwxfHx8fDE3Njc5NDQ5MzR8MA&ixlib=rb-4.1.0&q=80&w=1080',
+        'A zero-latency, no-code architecture designed for the rapid deployment of mission-critical mobile ecosystems. AppExe bypasses traditional development bottlenecks.',
+      features: ['Biometric Auth', 'Stateless Architecture', 'Legacy Sync'],
+      metric: '60% TTM Reduction',
+      image: 'https://images.unsplash.com/photo-1551288049-bbbda546697a?auto=format&fit=crop&q=80&w=1200',
+      ctaLabel: 'View Specs',
+      ctaHref: '/contact',
+      metricLabel: 'Target Yield',
     },
     {
       name: 'UncannyCV',
-      tagline: 'Computer Vision Suite',
+      id: '02',
+      tagline: 'Cognitive Vision Intelligence',
       description:
-        'Enterprise-grade computer vision API for object detection, facial recognition, and image analysis at scale with industry-leading accuracy.',
-      longDescription:
-        'UncannyCV delivers state-of-the-art computer vision capabilities through an easy-to-use API. Powered by advanced machine learning models, it provides real-time visual analysis with 99.9% accuracy. From retail to security to manufacturing, UncannyCV transforms visual data into actionable insights.',
-      features: [
-        'Real-time object detection and tracking',
-        'Facial recognition and verification',
-        'OCR with multi-language support',
-        'Image classification and tagging',
-        'Video analytics and scene understanding',
-        'Custom model training and deployment',
-        'RESTful API with comprehensive documentation',
-        'Enterprise SLA and 24/7 support',
-      ],
-      useCases: [
-        'Quality control automation',
-        'Security and surveillance',
-        'Retail analytics and insights',
-        'Document processing and verification',
-      ],
-      pricing: 'Custom enterprise pricing',
-      image:
-        'https://images.unsplash.com/photo-1649877508777-1554357604eb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb21wdXRlciUyMHZpc2lvbiUyMEFJJTIwdGVjaG5vbG9neXxlbnwxfHx8fDE3Njc5NDQ5MzR8MA&ixlib=rb-4.1.0&q=80&w=1080',
-    },
-    {
-      name: 'SmartDocs',
-      tagline: 'Intelligent Document Management',
-      description:
-        'AI-powered document processing and management system with automated extraction, classification, and compliance-ready storage.',
-      longDescription:
-        'SmartDocs leverages artificial intelligence to transform how organizations handle documents. From automatic categorization to intelligent data extraction, SmartDocs streamlines document workflows while ensuring security and compliance. Say goodbye to manual data entry and hello to intelligent automation.',
-      features: [
-        'Advanced OCR technology',
-        'Intelligent document categorization',
-        'Automated data extraction',
-        'Smart search and retrieval',
-        'Version control and audit trails',
-        'Compliance-ready secure storage',
-        'Workflow automation',
-        'Integration with existing systems',
-      ],
-      useCases: [
-        'Invoice and receipt processing',
-        'Contract management',
-        'Compliance documentation',
-        'Knowledge base management',
-      ],
-      pricing: 'Starting at $499/month',
-      image:
-        'https://images.unsplash.com/photo-1765502318157-61d9bb6579e0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkb2N1bWVudCUyMG1hbmFnZW1lbnQlMjBzeXN0ZW18ZW58MXx8fHwxNzY3OTI4MjMwfDA&ixlib=rb-4.1.0&q=80&w=1080',
+        'State-of-the-art computer vision models optimized for industrial-grade accuracy. UncannyCV provides the neural framework for spatial analysis.',
+      features: ['Sub-10ms Inference', 'Custom Training', 'Edge-Compatible'],
+      metric: '99.9% Accuracy',
+      image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1200',
+      ctaLabel: 'View Specs',
+      ctaHref: '/contact',
+      metricLabel: 'Target Yield',
     },
   ],
-  quickStats: [
-    { value: '99.9%', label: 'Uptime SLA' },
-    { value: '24/7', label: 'Support' },
-  ],
-  benefits: [
-    {
-      icon: 'Code',
-      title: 'Developer-Friendly',
-      description: 'Comprehensive APIs and SDKs with detailed documentation',
-    },
-    {
-      icon: 'Zap',
-      title: 'High Performance',
-      description: 'Built for scale with enterprise-grade infrastructure',
-    },
-    {
-      icon: 'Shield',
-      title: 'Secure & Compliant',
-      description: 'SOC 2, GDPR, and HIPAA compliant by design',
-    },
-    {
-      icon: 'Cloud',
-      title: 'Cloud-Native',
-      description: 'Deployed on AWS/Azure/GCP for maximum reliability',
-    },
-  ],
-  cta: {
-    heading: 'Ready to Get Started?',
-    description: 'Explore our products with a free trial or schedule a personalized demo with our team.',
-    primaryCta: { label: 'Start Free Trial', href: '/get-started' },
-    secondaryCta: { label: 'Schedule Demo', href: '/contact' },
+  inquiry: {
+    kicker: 'Strategic Alignment',
+    headingLines: ['Initiate a', 'High-Stakes Partnership.'],
+    description:
+      'Beyond our proprietary assets, we provide the advisory intelligence required to navigate complex technical transitions. Let’s discuss your organization’s specific trajectory.',
+    buttonLabel: 'Schedule Consultation',
+    buttonHref: '/contact',
+    regions: [
+      {
+        title: 'Americas',
+        addressLines: ['601 Lexington Avenue', 'New York, NY 10022'],
+        email: 'ny.office@firm.com',
+      },
+      {
+        title: 'EMEA',
+        addressLines: ['25 Cabot Square', 'London E14 4QA'],
+        email: 'ldn.office@firm.com',
+      },
+    ],
+    footerText: '© 2026 Global Intelligence Group',
+    links: [
+      { label: 'Privacy', href: '#' },
+      { label: 'Terms', href: '#' },
+    ],
   },
 };
 
@@ -144,84 +68,82 @@ export function Products() {
   const config = usePageConfig('products', DEFAULT_PRODUCTS_CONFIG);
 
   return (
-    <div className="min-h-screen">
-      <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">{config.hero.title}</h1>
-            <p className="text-xl text-gray-300 leading-relaxed">{config.hero.description}</p>
+    <div className="bg-white text-slate-900 selection:bg-slate-900 selection:text-white">
+      
+      {/* --- REFINED HERO (Smaller, cleaner) --- */}
+      <section className="relative pt-40 pb-32 bg-[#050A10] text-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+          <div className="flex flex-col md:flex-row gap-16 items-start justify-between">
+            <div className="max-w-2xl">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="h-[1px] w-8 bg-cyan-500"></div>
+                <span className="text-cyan-500 tracking-[0.4em] text-[9px] font-bold uppercase">{config.hero.kicker}</span>
+              </div>
+              {/* Reduced from 8xl to 5xl/6xl */}
+              <h1 className="text-4xl md:text-6xl font-light tracking-tight leading-[1.15] mb-8">
+                {config.hero.titleLines[0]} <br /> {config.hero.titleLines[1]}
+              </h1>
+            </div>
+            <div className="max-w-[280px] border-l border-white/10 pl-6 mt-2">
+              <p className="text-slate-400 text-sm font-light leading-relaxed">
+                {config.hero.subtitle}
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {config.products.map((product, index) => (
-        <section
-          key={product.name}
-          className={index % 2 === 0 ? 'py-20 bg-white' : 'py-20 bg-gray-50'}
-        >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-12 items-start">
-              <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
-                <div className="inline-block px-4 py-1 bg-cyan-100 text-cyan-700 rounded-full text-sm font-medium mb-4">
-                  Product
-                </div>
-                <h2 className="text-4xl font-bold text-slate-900 mb-2">{product.name}</h2>
-                <p className="text-xl text-cyan-600 font-medium mb-6">{product.tagline}</p>
-                <p className="text-lg text-gray-600 mb-6 leading-relaxed">{product.description}</p>
-                <p className="text-gray-700 mb-8 leading-relaxed">{product.longDescription}</p>
-
-                <div className="mb-8">
-                  <h3 className="text-lg font-semibold text-slate-900 mb-4">Key Features:</h3>
-                  <div className="grid sm:grid-cols-2 gap-3">
-                    {product.features.map((feature) => (
-                      <div key={feature} className="flex items-start">
-                        <CheckCircle className="w-5 h-5 text-cyan-500 mr-2 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700 text-sm">{feature}</span>
-                      </div>
-                    ))}
+      {/* --- PRODUCT SHOWCASE (Tighter layout) --- */}
+      {config.products.map((product, idx) => (
+        <section key={product.name} className={`py-40 ${idx % 2 === 0 ? 'bg-white' : 'bg-slate-50'}`}>
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <div className={`flex flex-col lg:flex-row gap-24 items-start ${idx % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
+              
+              {/* Image Column - Controlled height */}
+              <div className="w-full lg:w-1/2">
+                <div className="relative group overflow-hidden border border-slate-200">
+                  <div className="absolute top-4 left-4 z-20 bg-slate-900/80 backdrop-blur-sm text-white px-3 py-1 font-mono text-[9px] tracking-widest">
+                    ID // {product.id}
                   </div>
-                </div>
-
-                <div className="bg-gradient-to-r from-cyan-50 to-blue-50 rounded-lg p-6 mb-6">
-                  <h3 className="text-lg font-semibold text-slate-900 mb-3">Common Use Cases:</h3>
-                  <ul className="space-y-2">
-                    {product.useCases.map((useCase) => (
-                      <li key={useCase} className="flex items-center text-gray-700">
-                        <span className="w-2 h-2 bg-cyan-500 rounded-full mr-3"></span>
-                        {useCase}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-                  <Link
-                    to="/get-started"
-                    className="inline-flex items-center px-6 py-3 bg-cyan-600 hover:bg-cyan-700 text-white rounded-lg transition-colors font-semibold"
-                  >
-                    Get Started
-                    <ArrowRight className="ml-2" size={18} />
-                  </Link>
-                  <span className="text-lg font-semibold text-slate-900">{product.pricing}</span>
+                  <img 
+                    src={product.image} 
+                    alt={product.name} 
+                    className="w-full h-[450px] object-cover grayscale transition-all duration-1000 group-hover:grayscale-0" 
+                  />
                 </div>
               </div>
 
-              <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="rounded-2xl shadow-2xl w-full h-auto object-cover"
-                />
-                <div className="grid grid-cols-2 gap-4 mt-6">
-                  {config.quickStats.map((stat) => (
-                    <div
-                      key={stat.label}
-                      className="bg-white rounded-lg p-4 shadow-md text-center border border-gray-200"
-                    >
-                      <div className="text-3xl font-bold text-cyan-600 mb-1">{stat.value}</div>
-                      <div className="text-sm text-gray-600">{stat.label}</div>
+              {/* Text Column - More whitespace, smaller fonts */}
+              <div className="w-full lg:w-1/2 pt-4">
+                <p className="text-cyan-600 font-bold tracking-[0.3em] text-[9px] uppercase mb-4">
+                  {product.tagline}
+                </p>
+                <h2 className="text-3xl font-light text-slate-900 mb-6 tracking-tight">
+                  {product.name}
+                </h2>
+                <p className="text-base text-slate-500 font-light leading-relaxed mb-10 max-w-md">
+                  {product.description}
+                </p>
+
+                {/* Specs Grid */}
+                <div className="grid grid-cols-2 gap-x-8 gap-y-4 mb-12 border-t border-slate-100 pt-8">
+                  {product.features.map(feat => (
+                    <div key={feat} className="flex items-center gap-2">
+                      <div className="h-[1px] w-3 bg-cyan-500" />
+                      <span className="text-[10px] font-bold tracking-widest text-slate-700 uppercase">{feat}</span>
                     </div>
                   ))}
+                </div>
+
+                <div className="flex items-center gap-8">
+                  <Link to={product.ctaHref} className="border border-slate-900 px-8 py-4 text-[9px] font-bold uppercase tracking-[0.2em] hover:bg-slate-900 hover:text-white transition-all">
+                    {product.ctaLabel}
+                  </Link>
+                  <div className="h-[1px] flex-grow bg-slate-100"></div>
+                  <div className="text-right">
+                    <p className="text-xs font-bold text-slate-900">{product.metric}</p>
+                    <p className="text-[8px] text-slate-400 uppercase tracking-widest">{product.metricLabel}</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -229,47 +151,67 @@ export function Products() {
         </section>
       ))}
 
-      <section className="py-20 bg-slate-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Choose Our Products?</h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">{config.hero.description}</p>
-          </div>
+      {/* --- REFINED CTA (Compressed) --- */}
+{/* --- STRATEGIC INQUIRY (Replaces Ready to Integrate) --- */}
+<section className="bg-[#050A10] border-t border-white/10">
+  <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <div className="flex flex-col lg:flex-row">
+      
+      {/* Left Pane: The Partnership Invitation */}
+      <div className="lg:w-1/2 py-24 lg:py-32 lg:pr-16 border-b lg:border-b-0 lg:border-r border-white/10">
+        <div className="flex items-center gap-3 mb-8">
+          <div className="h-[1px] w-8 bg-cyan-500"></div>
+          <span className="text-cyan-500 tracking-[0.4em] text-[9px] font-bold uppercase">{config.inquiry.kicker}</span>
+        </div>
+        <h2 className="text-3xl md:text-4xl font-light text-white mb-8 tracking-tight leading-tight">
+          {config.inquiry.headingLines[0]} <br /> {config.inquiry.headingLines[1]}
+        </h2>
+        <p className="text-slate-400 text-sm font-light leading-relaxed mb-10 max-w-md">
+          {config.inquiry.description}
+        </p>
+        <Link to={config.inquiry.buttonHref} className="inline-block bg-white text-slate-900 px-10 py-4 text-[9px] font-bold uppercase tracking-[0.3em] hover:bg-cyan-500 hover:text-white transition-all">
+          {config.inquiry.buttonLabel}
+        </Link>
+      </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {config.benefits.map((benefit) => (
-              <div key={benefit.title} className="text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-cyan-500/10 rounded-full mb-4">
-                  {renderIcon(benefit.icon as IconName, 'w-8 h-8 text-cyan-500')}
-                </div>
-                <h3 className="text-xl font-bold mb-2">{benefit.title}</h3>
-                <p className="text-gray-400">{benefit.description}</p>
-              </div>
+      {/* Right Pane: Global Presence / Office Detail */}
+      <div className="lg:w-1/2 py-24 lg:py-32 lg:pl-16 flex flex-col justify-between">
+        <div className="grid grid-cols-2 gap-12">
+          {config.inquiry.regions.map((region) => (
+            <div key={region.title}>
+              <p className="text-white text-[10px] font-bold tracking-widest uppercase mb-4">{region.title}</p>
+              <p className="text-slate-500 text-[11px] leading-relaxed font-light">
+                {region.addressLines.map((line) => (
+                  <React.Fragment key={line}>
+                    {line}
+                    <br />
+                  </React.Fragment>
+                ))}
+                <span className="text-slate-300">{region.email}</span>
+              </p>
+            </div>
+          ))}
+        </div>
+        
+        <div className="mt-16 pt-8 border-t border-white/5 flex items-center justify-between">
+          <p className="text-[9px] text-slate-600 tracking-[0.2em] uppercase">{config.inquiry.footerText}</p>
+          <div className="flex gap-6">
+            {config.inquiry.links.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                className="text-slate-600 hover:text-white text-[9px] uppercase tracking-widest transition-colors"
+              >
+                {link.label}
+              </a>
             ))}
           </div>
         </div>
-      </section>
+      </div>
 
-      <section className="py-20 bg-gradient-to-br from-cyan-600 to-blue-700 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">{config.cta.heading}</h2>
-          <p className="text-xl mb-8 text-cyan-50">{config.cta.description}</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              to={config.cta.primaryCta.href}
-              className="inline-flex items-center justify-center px-8 py-4 bg-white text-cyan-700 hover:bg-gray-100 rounded-lg transition-colors font-semibold text-lg"
-            >
-              {config.cta.primaryCta.label}
-            </Link>
-            <Link
-              to={config.cta.secondaryCta.href}
-              className="inline-flex items-center justify-center px-8 py-4 border-2 border-white hover:bg-white/10 text-white rounded-lg transition-all font-semibold text-lg"
-            >
-              {config.cta.secondaryCta.label}
-            </Link>
-          </div>
-        </div>
-      </section>
+    </div>
+  </div>
+</section>
     </div>
   );
 }

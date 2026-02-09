@@ -1,163 +1,78 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
-import {
-  Smartphone,
-  Eye,
-  Lightbulb,
-  Shield,
-  Globe,
-  TrendingUp,
-  Zap,
-  Target,
-  Users,
-} from 'lucide-react';
+import { ArrowRight, Check } from 'lucide-react';
 import { usePageConfig } from '../hooks/usePageConfig';
-
-const ICONS = {
-  Smartphone,
-  Eye,
-  Lightbulb,
-  Shield,
-  Globe,
-  TrendingUp,
-  Zap,
-  Target,
-  Users,
-} as const;
-type IconName = keyof typeof ICONS;
-
-const renderIcon = (name?: IconName, className?: string) => {
-  if (!name) return null;
-  const Icon = ICONS[name];
-  if (!Icon) return null;
-  return <Icon className={className} />;
-};
 
 const DEFAULT_SERVICES_CONFIG = {
   hero: {
-    title: 'Enterprise Technology Services',
-    description:
-      'We partner with organizations to deliver innovative technology solutions that drive business transformation and competitive advantage.',
+    kicker: 'Our Capabilities',
+    titleLines: ['Enterprise', 'Technology Services.'],
+    subtitle:
+      "Navigating the intersection of strategic intelligence and technical execution for the world's leading organizations.",
   },
-  mainServices: [
+  services: [
     {
-      icon: 'Smartphone',
-      title: 'Mobile App Development',
-      description: 'End-to-end mobile application development for iOS and Android platforms.',
-      features: [
-        'Native iOS (Swift) and Android (Kotlin)',
-        'Cross-platform development (React Native, Flutter)',
-        'Progressive Web Apps (PWA)',
-        'Mobile backend and API integration',
-        'App Store optimization and deployment',
-        'Maintenance and continuous updates',
-      ],
-      technologies: ['Swift', 'Kotlin', 'React Native', 'Flutter', 'Firebase', 'AWS Amplify'],
-      image:
-        'https://images.unsplash.com/photo-1633250391894-397930e3f5f2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBhcHAlMjBkZXZlbG9wbWVudHxlbnwxfHx8fDE3Njc3NTcyMjF8MA&ixlib=rb-4.1.0&q=80&w=1080',
+      id: '01',
+      category: 'Digital Transformation',
+      title: 'Mobile Architecture & Ecosystems',
+      description:
+        'Engineering scalable, secure mobile ecosystems for the global enterprise. We specialize in cross-platform deployment and legacy system integration.',
+      features: ['Native Swift/Kotlin Engineering', 'Cross-Platform Architecture', 'Mobile Backend & API Sync'],
+      image: 'https://images.unsplash.com/photo-1633250391894-397930e3f5f2?auto=format&fit=crop&q=80&w=1200',
+      ctaLabel: 'Inquire for Specs',
+      ctaHref: '/contact',
     },
     {
-      icon: 'Eye',
-      title: 'Computer Vision Solutions',
-      description: 'Advanced AI-powered visual recognition and analysis systems for intelligent automation.',
-      features: [
-        'Object detection and classification',
-        'Facial recognition systems',
-        'OCR and document processing',
-        'Quality control automation',
-        'Video analytics and monitoring',
-        'Custom model training',
-      ],
-      technologies: ['TensorFlow', 'PyTorch', 'OpenCV', 'YOLO', 'AWS Rekognition', 'Google Cloud Vision'],
-      image:
-        'https://images.unsplash.com/photo-1649877508777-1554357604eb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb21wdXRlciUyMHZpc2lvbiUyMGFpfGVufDF8fHx8MTc2Nzg2MjA2NHww&ixlib=rb-4.1.0&q=80&w=1080',
+      id: '02',
+      category: 'Applied Intelligence',
+      title: 'Computer Vision & AI Systems',
+      description:
+        'Harnessing neural networks to automate high-stakes decision making. Our proprietary models are optimized for real-time inference and accuracy.',
+      features: ['Neural Object Detection', 'Cognitive Document Analysis', 'Video Analytics at Scale'],
+      image: 'https://images.unsplash.com/photo-1649877508777-1554357604eb?auto=format&fit=crop&q=80&w=1200',
+      ctaLabel: 'Inquire for Specs',
+      ctaHref: '/contact',
     },
     {
-      icon: 'Lightbulb',
-      title: 'Product R&D Services',
-      description: 'Complete product development lifecycle from ideation to market launch.',
-      features: [
-        'Product strategy and roadmap',
-        'UX/UI design and prototyping',
-        'MVP development',
-        'Market validation and testing',
-        'Scalable architecture design',
-        'Go-to-market support',
-      ],
-      technologies: ['Figma', 'Sketch', 'React', 'Node.js', 'Docker', 'Kubernetes'],
-      image:
-        'https://images.unsplash.com/photo-1759752394755-1241472b589d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbnRlcnByaXNlJTIwc29mdHdhcmV8ZW58MXx8fHwxNzY3ODc1NTQxfDA&ixlib=rb-4.1.0&q=80&w=1080',
+      id: '03',
+      category: 'Product Strategy',
+      title: 'Corporate R&D & Prototyping',
+      description:
+        'Bridging the gap between conceptualization and market leadership. We deliver rapid R&D cycles that validate complex business hypotheses.',
+      features: ['UX/UI Systems Design', 'MVP Rapid Deployment', 'Scalable Cloud Architecture'],
+      image: 'https://images.unsplash.com/photo-1759752394755-1241472b589d?auto=format&fit=crop&q=80&w=1200',
+      ctaLabel: 'Inquire for Specs',
+      ctaHref: '/contact',
     },
   ],
-  workflow: {
-    heading: 'Our Partnership Model',
-    description: "We believe in true partnerships. Here's how we work together to deliver exceptional results.",
+  engagement: {
+    heading: 'The Engagement Model',
     steps: [
-      {
-        step: '01',
-        title: 'Discovery & Planning',
-        description:
-          'We start by understanding your business objectives, challenges, and requirements through in-depth consultation.',
-      },
-      {
-        step: '02',
-        title: 'Strategy Development',
-        description:
-          'Our team creates a comprehensive strategy and roadmap tailored to your specific needs and goals.',
-      },
-      {
-        step: '03',
-        title: 'Design & Prototyping',
-        description:
-          'We develop prototypes and designs for validation before moving to full-scale development.',
-      },
-      {
-        step: '04',
-        title: 'Development & Testing',
-        description:
-          'Agile development with continuous testing and quality assurance throughout the process.',
-      },
-      {
-        step: '05',
-        title: 'Deployment & Support',
-        description:
-          'Seamless launch with ongoing support, maintenance, and optimization for continuous improvement.',
-      },
-    ],
-  },
-  industries: {
-    heading: 'Industries We Serve',
-    description:
-      'Deep expertise across multiple sectors, delivering tailored solutions for unique industry challenges.',
-    items: [
-      { name: 'Healthcare', icon: 'Shield' },
-      { name: 'Financial Services', icon: 'TrendingUp' },
-      { name: 'Retail & E-commerce', icon: 'Globe' },
-      { name: 'Manufacturing', icon: 'Zap' },
-      { name: 'Education', icon: 'Target' },
-      { name: 'Government', icon: 'Users' },
+      { step: '01', title: 'Discovery', desc: 'Understanding mission-critical objectives.' },
+      { step: '02', title: 'Strategy', desc: 'Tailoring proprietary roadmap.' },
+      { step: '03', title: 'Execution', desc: 'Engineering and technical deployment.' },
+      { step: '04', title: 'QA', desc: 'Validation and security auditing.' },
+      { step: '05', title: 'Support', desc: 'Long-term ecosystem optimization.' },
     ],
   },
   capabilities: {
-    heading: 'Technical Capabilities',
-    description: 'Comprehensive technology stack and expertise to bring your vision to life',
+    kicker: 'Core Stack',
+    heading: 'Infrastructure & Compliance',
     items: [
-      'Cloud Architecture (AWS, Azure, GCP)',
-      'Microservices & Containerization',
-      'DevOps & CI/CD',
-      'API Development & Integration',
-      'Data Analytics & BI',
-      'Security & Compliance',
-      'Blockchain Development',
+      'Cloud Architecture',
+      'Microservices',
+      'DevOps CI/CD',
+      'API Integration',
+      'Data Analytics',
+      'ISO Compliance',
+      'Blockchain',
       'IoT Solutions',
     ],
   },
   cta: {
-    heading: "Let's Build Something Great Together",
-    description: 'Schedule a no-commitment consultation to discuss your project and explore how we can help.',
-    primaryCta: {
-      label: 'Start Your Project',
-      href: '/get-started',
-    },
+    heading: 'Secure your technical advantage.',
+    buttonLabel: 'Initiate Project',
+    buttonHref: '/get-started',
   },
 };
 
@@ -165,138 +80,118 @@ export function Services() {
   const config = usePageConfig('services', DEFAULT_SERVICES_CONFIG);
 
   return (
-    <div className="min-h-screen">
-      <section className="bg-gradient-to-br from-[#2C3E50] via-[#34495e] to-[#2C3E50] text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">{config.hero.title}</h1>
-            <p className="text-xl text-gray-300 leading-relaxed">{config.hero.description}</p>
+    <div className="bg-white text-slate-900 selection:bg-slate-900 selection:text-white">
+      
+      {/* --- HERO SECTION --- */}
+      <section className="relative pt-32 pb-20 bg-[#050A10] text-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-12">
+            <div className="max-w-3xl">
+              <div className="flex items-center gap-4 mb-8">
+                <div className="h-[1px] w-12 bg-cyan-500"></div>
+                <span className="text-cyan-500 tracking-[0.3em] text-[10px] font-bold uppercase">{config.hero.kicker}</span>
+              </div>
+              <h1 className="text-5xl md:text-8xl font-light leading-[1.1] tracking-tight mb-8">
+                {config.hero.titleLines[0]} <br /> {config.hero.titleLines[1]}
+              </h1>
+            </div>
+            <div className="max-w-sm pb-4">
+              <p className="text-slate-400 text-lg font-light leading-relaxed">
+                {config.hero.subtitle}
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-20">
-            {config.mainServices.map((service) => (
-              <div key={service.title} className="grid lg:grid-cols-2 gap-12 items-start">
-                <div>
-                  <div className="mb-6">{renderIcon(service.icon as IconName, 'w-16 h-16 text-cyan-500')}</div>
-                  <h2 className="text-3xl font-bold text-[#2C3E50] mb-4">{service.title}</h2>
-                  <p className="text-xl text-gray-600 mb-8">{service.description}</p>
+      {/* --- MAIN SERVICES (The "Spec Sheet" Layout) --- */}
+      <section className="py-24 border-b border-slate-100">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="space-y-40">
+            {config.services.map((service) => (
+              <div key={service.id} className="grid lg:grid-cols-12 gap-16 items-start">
+                {/* Identifier */}
+                <div className="lg:col-span-1">
+                  <span className="text-5xl font-bold text-slate-100 block sticky top-32 leading-none">
+                    {service.id}
+                  </span>
+                </div>
 
-                  <h3 className="text-lg font-semibold text-[#2C3E50] mb-4">Key Features:</h3>
-                  <ul className="space-y-3 mb-8">
-                    {service.features.map((feature) => (
-                      <li key={feature} className="flex items-start text-gray-700">
-                        <span className="text-[#3BA5C8] mr-3 mt-1">✓</span>
-                        {feature}
-                      </li>
+                {/* Content */}
+                <div className="lg:col-span-5">
+                  <p className="text-[10px] tracking-[0.3em] text-cyan-600 font-bold uppercase mb-4">{service.category}</p>
+                  <h2 className="text-4xl font-light mb-8 text-slate-900">{service.title}</h2>
+                  <p className="text-lg text-slate-500 font-light leading-relaxed mb-10">
+                    {service.description}
+                  </p>
+                  
+                  <div className="space-y-4 mb-12">
+                    {service.features.map(feat => (
+                      <div key={feat} className="flex items-center gap-4 group">
+                        <div className="h-[1px] w-6 bg-slate-300 transition-all group-hover:w-10 group-hover:bg-cyan-500" />
+                        <span className="text-sm font-semibold tracking-tight text-slate-700 uppercase">{feat}</span>
+                      </div>
                     ))}
-                  </ul>
+                  </div>
 
-                  <div className="bg-gray-50 rounded-lg p-6">
-                    <h4 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">
-                      Technologies We Use
-                    </h4>
-                    <div className="flex flex-wrap gap-2">
-                      {service.technologies.map((tech) => (
-                        <span
-                          key={tech}
-                          className="px-3 py-1 bg-white text-gray-700 text-sm rounded-full border border-gray-200"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
+                  <Link to={service.ctaHref} className="inline-flex items-center gap-4 text-xs font-bold tracking-[0.2em] uppercase text-slate-900 hover:text-cyan-600 transition-colors group">
+                    {service.ctaLabel} <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform" />
+                  </Link>
+                </div>
+
+                {/* Image */}
+                <div className="lg:col-span-6">
+                  <div className="aspect-[4/3] overflow-hidden grayscale hover:grayscale-0 transition-all duration-1000 border border-slate-100">
+                    <img src={service.image} alt={service.title} className="w-full h-full object-cover scale-105 hover:scale-100 transition-transform duration-1000" />
                   </div>
                 </div>
-
-                <div className="lg:pl-8">
-                  <img src={service.image} alt={service.title} className="rounded-xl shadow-lg w-full" />
-                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">{config.workflow.heading}</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">{config.workflow.description}</p>
+      {/* --- PARTNERSHIP MODEL (Process) --- */}
+      <section className="py-24 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="mb-20">
+            <h2 className="text-4xl font-light mb-4">{config.engagement.heading}</h2>
+            <div className="h-1 w-20 bg-slate-900"></div>
           </div>
-
-          <div className="grid md:grid-cols-5 gap-8">
-            {config.workflow.steps.map((item, index) => (
-              <div key={item.title} className="relative">
-                <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow h-full">
-                  <div className="text-4xl font-bold text-cyan-500/20 mb-4">{item.step}</div>
-                  <h3 className="text-lg font-bold text-slate-900 mb-3">{item.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{item.description}</p>
-                </div>
-                {index < config.workflow.steps.length - 1 && (
-                  <div className="hidden md:block absolute top-1/2 -right-4 w-8 h-0.5 bg-cyan-300" />
-                )}
+          
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-px bg-slate-200 border border-slate-200">
+            {config.engagement.steps.map((item) => (
+              <div key={item.step} className="bg-white p-10 hover:bg-slate-50 transition-colors">
+                <span className="text-xs font-mono text-cyan-600 block mb-6">{item.step}</span>
+                <h3 className="font-bold text-slate-900 mb-4 tracking-tight uppercase text-sm">{item.title}</h3>
+                <p className="text-slate-500 text-sm font-light leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">{config.industries.heading}</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">{config.industries.description}</p>
-          </div>
-
-          <div className="grid md:grid-cols-3 lg:grid-cols-6 gap-6">
-            {config.industries.items.map((industry) => (
-              <div
-                key={industry.name}
-                className="bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-xl p-6 text-center hover:shadow-lg transition-all hover:border-cyan-300"
-              >
-                <div className="text-cyan-500 flex justify-center mb-3">
-                  {renderIcon(industry.icon as IconName, 'w-8 h-8')}
-                </div>
-                <h3 className="font-semibold text-slate-900">{industry.name}</h3>
-              </div>
-            ))}
-          </div>
+      {/* --- TECHNICAL CAPABILITIES (Grid) --- */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center mb-20">
+            <p className="text-[10px] tracking-[0.5em] text-slate-400 uppercase font-bold mb-4">{config.capabilities.kicker}</p>
+            <h2 className="text-4xl font-light text-slate-900">{config.capabilities.heading}</h2>
+        </div>
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 border-t border-l border-slate-100">
+          {config.capabilities.items.map((cap) => (
+            <div key={cap} className="border-r border-b border-slate-100 p-8 hover:bg-slate-900 group transition-all">
+              <span className="text-slate-600 group-hover:text-white text-sm font-medium transition-colors uppercase tracking-widest">{cap}</span>
+            </div>
+          ))}
         </div>
       </section>
 
-      <section className="py-20 bg-slate-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">{config.capabilities.heading}</h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">{config.capabilities.description}</p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {config.capabilities.items.map((capability) => (
-              <div
-                key={capability}
-                className="bg-white/5 backdrop-blur border border-white/10 rounded-lg p-4 text-center hover:bg-white/10 transition-colors"
-              >
-                <p className="font-medium">{capability}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 bg-gradient-to-br from-cyan-600 to-blue-700 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">{config.cta.heading}</h2>
-          <p className="text-xl text-cyan-50">{config.cta.description}</p>
-          <Link
-            to={config.cta.primaryCta.href}
-            className="inline-flex items-center px-8 py-4 mt-6 bg-white text-cyan-700 hover:bg-gray-100 rounded-lg transition-colors font-semibold text-lg"
-          >
-            {config.cta.primaryCta.label}
+      {/* --- CTA --- */}
+      <section className="py-32 bg-[#050A10] text-center">
+        <div className="max-w-3xl mx-auto px-6">
+          <h2 className="text-4xl md:text-5xl font-light text-white mb-10 leading-tight">{config.cta.heading}</h2>
+          <Link to={config.cta.buttonHref} className="inline-block border border-white text-white hover:bg-white hover:text-black px-12 py-6 text-sm font-bold uppercase tracking-[0.2em] transition-all">
+            {config.cta.buttonLabel}
           </Link>
         </div>
       </section>

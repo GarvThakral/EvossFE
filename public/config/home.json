@@ -1,151 +1,126 @@
 {
   "hero": {
-    "badge": "✦ Trusted Since 2014",
-    "title": "Strategic Partnerships. Complex Problems Solved.",
-    "subtitle": "Customer-first, partner-powered, technology-enabled solutions for enterprise success.",
-    "primaryCta": {
-      "label": "Schedule Free Consultation",
-      "href": "/get-started"
-    },
-    "secondaryCta": {
-      "label": "Explore Our Services",
-      "href": "/services"
-    }
+    "eyebrow": "ESTABLISHED 2014",
+    "title": "Solving Complex Challenges Through Strategic Intelligence.",
+    "subtitle": "We partner with global enterprises to navigate the intersection of technology and human-centric design.",
+    "primaryCta": { "label": "Inquire Now", "href": "/get-started" },
+    "secondaryCta": { "label": "Our Capabilities", "href": "/services" }
   },
-  "trustBar": {
-    "heading": "Trusted by Leading Organizations Across Industries",
-    "subtitle": "Reliable, technology-first partners who deliver measurable outcomes."
-  },
-  "industries": [
-    { "name": "Healthcare", "icon": "Activity" },
-    { "name": "Financial Services", "icon": "TrendingUp" },
-    { "name": "Retail & E-commerce", "icon": "ShoppingCart" },
-    { "name": "Manufacturing", "icon": "Building2" },
-    { "name": "Education", "icon": "GraduationCap" },
-    { "name": "Government", "icon": "Landmark" }
-  ],
-  "services": {
-    "heading": "Our Core Services",
-    "description": "Comprehensive technology solutions tailored to your business needs",
+  "sectors": {
+    "kicker": "Focus Sectors",
+    "titleLines": ["Deep Industry", "Expertise."],
+    "description": "We don't just provide technology; we provide the domain-specific intelligence required to lead in a complex global market.",
     "items": [
       {
-        "icon": "Smartphone",
-        "title": "Mobile Development",
-        "description": "Native and cross-platform mobile applications built with cutting-edge technology for iOS and Android.",
-        "linkLabel": "Learn more",
-        "link": "/services"
+        "name": "Financial Services",
+        "id": "FS",
+        "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=2000",
+        "description": "Algorithmic trading, secure banking infrastructure, and fintech evolution."
       },
       {
-        "icon": "Eye",
-        "title": "Computer Vision",
-        "description": "Advanced AI-powered visual recognition and analysis systems for intelligent automation.",
-        "linkLabel": "Learn more",
-        "link": "/services"
+        "name": "Healthcare",
+        "id": "HC",
+        "image": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=2000",
+        "description": "Precision medicine, digital health platforms, and HIPAA-compliant AI."
       },
       {
-        "icon": "Lightbulb",
-        "title": "Product R&D",
-        "description": "End-to-end product development from ideation to market launch with expert guidance.",
-        "linkLabel": "Learn more",
-        "link": "/services"
+        "name": "Manufacturing",
+        "id": "MF",
+        "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=2000",
+        "description": "Industry 4.0, predictive maintenance, and supply chain automation."
+      },
+      {
+        "name": "Government",
+        "id": "GV",
+        "image": "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=2000",
+        "description": "Public sector modernization and secure citizen engagement portals."
+      },
+      {
+        "name": "Retail & E-commerce",
+        "id": "RT",
+        "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=2000",
+        "description": "Omnichannel logistics and hyper-personalized customer journeys."
+      },
+      {
+        "name": "Education",
+        "id": "ED",
+        "image": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=2000",
+        "description": "LMS ecosystems and AI-driven personalized learning paths."
       }
     ]
   },
-  "products": {
-    "heading": "Our Core Products",
-    "description": "Innovative solutions designed to accelerate your digital transformation",
+  "servicesCarousel": {
+    "heading": "Expertise & Innovation",
+    "linkLabel": "Explore Perspective",
+    "linkHref": "/services",
     "items": [
       {
-        "name": "AppExe",
-        "tagline": "Zero-Programming Mobile Platform",
-        "description": "Build powerful mobile applications without writing a single line of code. Perfect for rapid prototyping and MVP development.",
-        "features": [
-          "Drag-and-drop interface",
-          "Pre-built templates",
-          "Instant deployment",
-          "Cloud hosting included"
-        ],
-        "image": "https://images.unsplash.com/photo-1762341119237-98df67c9c3c9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBhcHAlMjBkZXZlbG9wbWVudCUyMHNjcmVlbnxlbnwxfHx8fDE3Njc5NDQ5MzR8MA&ixlib=rb-4.1.0&q=80&w=1080"
+        "id": "01",
+        "title": "Mobile Architecture",
+        "description": "Engineering scalable, secure, and intuitive mobile ecosystems for the modern enterprise.",
+        "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000"
       },
       {
-        "name": "UncannyCV",
-        "tagline": "Computer Vision Suite",
-        "description": "Enterprise-grade computer vision API for object detection, facial recognition, and image analysis at scale.",
-        "features": [
-          "Real-time processing",
-          "99.9% accuracy",
-          "Custom model training",
-          "RESTful API"
-        ],
-        "image": "https://images.unsplash.com/photo-1649877508777-1554357604eb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb21wdXRlciUyMHZpc2lvbiUyMEFJJTIwdGVjaG5vbG9neXxlbnwxfHx8fDE3Njc5NDQ5MzR8MA&ixlib=rb-4.1.0&q=80&w=1080"
+        "id": "02",
+        "title": "Vision & AI Systems",
+        "description": "Harnessing neural networks and computer vision to automate high-stakes decision making.",
+        "image": "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2000"
       },
       {
-        "name": "SmartDocs",
-        "tagline": "Intelligent Document Management",
-        "description": "AI-powered document processing and management system with automated extraction and classification.",
-        "features": [
-          "OCR technology",
-          "Smart categorization",
-          "Compliance ready",
-          "Secure cloud storage"
-        ],
-        "image": "https://images.unsplash.com/photo-1765502318157-61d9bb6579e0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkb2N1bWVudCUyMG1hbmFnZW1lbnQlMjBzeXN0ZW18ZW58MXx8fHwxNzY3OTI4MjMwfDA&ixlib=rb-4.1.0&q=80&w=1080"
-      }
-    ]
-  },
-  "blog": {
-    "heading": "Latest Insights",
-    "description": "Expert perspectives on technology trends, best practices, and digital transformation",
-    "buttonLabel": "View All Articles",
-    "items": [
-      {
-        "title": "The Future of Enterprise AI: Transforming Business Operations",
-        "excerpt": "How artificial intelligence and computer vision are revolutionizing enterprise workflows, driving competitive advantages, and reshaping industry standards.",
-        "image": "https://images.unsplash.com/photo-1744640326166-433469d102f2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhcnRpZmljaWFsJTIwaW50ZWxsaWdlbmNlJTIwYnVzaW5lc3N8ZW58MXx8fHwxNzY3OTQ0OTM1fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "date": "January 8, 2026",
-        "category": "AI & Machine Learning"
-      },
-      {
-        "title": "Mobile-First Development: Building Apps That Scale",
-        "excerpt": "Essential strategies for creating high-performance mobile applications that deliver exceptional user experiences and drive business growth.",
-        "image": "https://images.unsplash.com/photo-1732121041218-2050c914567b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBkZXZlbG9wbWVudCUyMHdvcmtzcGFjZXxlbnwxfHx8fDE3Njc5NDQ5MzV8MA&ixlib=rb-4.1.0&q=80&w=1080",
-        "date": "January 5, 2026",
-        "category": "Mobile Development"
-      },
-      {
-        "title": "Building High-Performance Enterprise Technology Teams",
-        "excerpt": "Best practices for assembling, managing, and scaling technology teams in enterprise environments to deliver world-class solutions.",
-        "image": "https://images.unsplash.com/photo-1716703432455-3045789de738?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbnRlcnByaXNlJTIwdGVjaG5vbG9neSUyMHRlYW18ZW58MXx8fHwxNzY3OTQ0OTM1fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "date": "December 30, 2025",
-        "category": "Enterprise Technology"
+        "id": "03",
+        "title": "Product Engineering",
+        "description": "Rapid R&D and deployment of proprietary software solutions that define market leadership.",
+        "image": "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=2000"
       }
     ]
   },
   "metrics": {
-    "heading": "Proven Track Record",
-    "description": "Numbers that speak to our commitment and expertise",
     "items": [
-      { "value": "200+", "label": "Projects Delivered" },
-      { "value": "50+", "label": "Enterprise Clients" },
-      { "value": "12+", "label": "Years Experience" },
-      { "value": "95%", "label": "Client Retention" }
+      { "value": "200+", "label": "ENGAGEMENTS" },
+      { "value": "50+", "label": "GLOBAL ENTITIES" },
+      { "value": "12", "label": "YEARS OF ALPHA" },
+      { "value": "95%", "label": "RETENTION RATE" }
     ]
   },
-  "cta": {
-    "heading": "Ready to Transform Your Business?",
-    "description": "Let's discuss your needs and explore how we can help you achieve your goals. No commitment required.",
-    "primaryCta": {
-      "label": "Start Your Project",
-      "href": "/get-started"
-    },
-    "secondaryCta": {
-      "label": "Discuss Your Needs",
-      "href": "/contact"
-    },
-    "footnotes": [
-      "No commitment consultation",
-      "12+ years in business",
-      "Global partner network"
+  "assets": {
+    "kicker": "Intellectual Property",
+    "title": "Proprietary Assets",
+    "description": "Our internal R&D lab develops high-performance accelerators designed to compress transformation timelines for our enterprise partners.",
+    "badgeLabel": "Core Asset",
+    "linkLabel": "Technical Specs",
+    "linkHref": "/products",
+    "items": [
+      {
+        "name": "AppExe",
+        "tagline": "Rapid Deployment Framework",
+        "description": "An enterprise-grade, zero-programming architecture that allows for the instantaneous deployment of cross-platform mobile ecosystems.",
+        "features": ["Stateless Architecture", "Biometric Integration", "Legacy Sync"],
+        "image": "https://images.unsplash.com/photo-1551288049-bbbda546697a?auto=format&fit=crop&q=80&w=2000",
+        "id": "01"
+      },
+      {
+        "name": "UncannyCV",
+        "tagline": "Computer Vision Suite",
+        "description": "A proprietary neural network engine optimized for real-time object detection and spatial analysis in high-security environments.",
+        "features": ["99.9% Inference Accuracy", "Edge Computing Ready", "Sub-10ms Latency"],
+        "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=2000",
+        "id": "02"
+      },
+      {
+        "name": "SmartDocs",
+        "tagline": "Cognitive Document Processing",
+        "description": "Advanced OCR and NLP pipeline that transforms unstructured regulatory data into actionable business intelligence.",
+        "features": ["ISO 27001 Compliant", "Automated Classification", "Audit-Ready Logs"],
+        "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=2000",
+        "id": "03"
+      }
     ]
+  },
+  "finalCta": {
+    "heading": "Ready to redefine your digital trajectory?",
+    "buttonLabel": "Initiate Consultation",
+    "buttonHref": "/contact",
+    "locations": ["New York", "London", "Singapore"]
   }
 }
+
