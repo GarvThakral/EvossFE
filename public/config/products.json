@@ -1,7 +1,10 @@
 {
   "hero": {
     "kicker": "Technical Portfolio",
-    "titleLines": ["Proprietary Assets &", "Technical Accelerators."],
+    "titleLines": [
+      "Proprietary Assets &",
+      "Technical Accelerators."
+    ],
     "subtitle": "Advanced frameworks designed to compress digital transformation timelines for global entities."
   },
   "products": [
@@ -10,10 +13,14 @@
       "id": "01",
       "tagline": "Enterprise Mobility Engine",
       "description": "A zero-latency, no-code architecture designed for the rapid deployment of mission-critical mobile ecosystems. AppExe bypasses traditional development bottlenecks.",
-      "features": ["Biometric Auth", "Stateless Architecture", "Legacy Sync"],
+      "features": [
+        "Biometric Auth",
+        "Stateless Architecture",
+        "Legacy Sync"
+      ],
       "metric": "60% TTM Reduction",
       "metricLabel": "Target Yield",
-      "image": "https://images.unsplash.com/photo-1551288049-bbbda546697a?auto=format&fit=crop&q=80&w=1200",
+      "image": "https://res.cloudinary.com/dxbih92ua/image/upload/v1770651511/uploads/1770651511652-0f0bc2d2afb2ca19.png",
       "ctaLabel": "View Specs",
       "ctaHref": "/contact"
     },
@@ -22,7 +29,11 @@
       "id": "02",
       "tagline": "Cognitive Vision Intelligence",
       "description": "State-of-the-art computer vision models optimized for industrial-grade accuracy. UncannyCV provides the neural framework for spatial analysis.",
-      "features": ["Sub-10ms Inference", "Custom Training", "Edge-Compatible"],
+      "features": [
+        "Sub-10ms Inference",
+        "Custom Training",
+        "Edge-Compatible"
+      ],
       "metric": "99.9% Accuracy",
       "metricLabel": "Target Yield",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1200",
@@ -32,27 +43,41 @@
   ],
   "inquiry": {
     "kicker": "Strategic Alignment",
-    "headingLines": ["Initiate a", "High-Stakes Partnership."],
+    "headingLines": [
+      "Initiate a",
+      "High-Stakes Partnership."
+    ],
     "description": "Beyond our proprietary assets, we provide the advisory intelligence required to navigate complex technical transitions. Let’s discuss your organization’s specific trajectory.",
     "buttonLabel": "Schedule Consultation",
     "buttonHref": "/contact",
     "regions": [
       {
         "title": "Americas",
-        "addressLines": ["601 Lexington Avenue", "New York, NY 10022"],
+        "addressLines": [
+          "601 Lexington Avenue",
+          "New York, NY 10022"
+        ],
         "email": "ny.office@firm.com"
       },
       {
         "title": "EMEA",
-        "addressLines": ["25 Cabot Square", "London E14 4QA"],
+        "addressLines": [
+          "25 Cabot Square",
+          "London E14 4QA"
+        ],
         "email": "ldn.office@firm.com"
       }
     ],
     "footerText": "© 2026 Global Intelligence Group",
     "links": [
-      { "label": "Privacy", "href": "#" },
-      { "label": "Terms", "href": "#" }
+      {
+        "label": "Privacy",
+        "href": "#"
+      },
+      {
+        "label": "Terms",
+        "href": "#"
+      }
     ]
   }
 }
-
