@@ -5,17 +5,17 @@ import { usePageConfig } from '../hooks/usePageConfig';
 
 const DEFAULT_HOME_CONFIG = {
   hero: {
-    eyebrow: "ESTABLISHED 2014",
-    title: "Solving Complex Challenges Through Strategic Intelligence.",
-    subtitle: "We partner with global enterprises to navigate the intersection of technology and human-centric design.",
+    eyebrow: '✦ Trusted Since 2013',
+    title: 'Unlocking the Power of Visual Intelligence',
+    subtitle:
+      'EvoSS Global is a trusted services company delivering advanced AI solutions, with a focus on computer vision and image-processing workflows.',
     primaryCta: { label: 'Inquire Now', href: '/get-started' },
     secondaryCta: { label: 'Our Capabilities', href: '/services' },
   },
   sectors: {
-    kicker: 'Focus Sectors',
-    titleLines: ['Deep Industry', 'Expertise.'],
-    description:
-      "We don't just provide technology; we provide the domain-specific intelligence required to lead in a complex global market.",
+    kicker: 'Trusted by Businesses Across Industries',
+    titleLines: ['Vision Intelligence', 'Across Industries'],
+    description: 'Helping teams automate, optimize, and make better decisions with vision intelligence.',
     items: [
       {
         name: 'Financial Services',
@@ -56,27 +56,52 @@ const DEFAULT_HOME_CONFIG = {
     ],
   },
   servicesCarousel: {
-    heading: 'Expertise & Innovation',
+    heading: 'What We Do',
     linkLabel: 'Explore Perspective',
     linkHref: '/services',
+    description:
+      'You bring the idea, we take it to deployment, delivering end-to-end vision intelligence services including front- and back-end integration, comprehensive data labeling, model training and optimization, and production-ready portals built for online deployment and revenue generation.',
     items: [
       {
         id: '01',
-        title: 'Mobile Architecture',
-        description: 'Engineering scalable, secure, and intuitive mobile ecosystems for the modern enterprise.',
-        image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000',
+        title: 'Computer Vision',
+        description: 'Advanced AI-powered visual recognition and analysis systems for intelligent automation.',
+        image: 'https://images.unsplash.com/photo-1649877508777-1554357604eb?auto=format&fit=crop&q=80&w=2000',
       },
       {
         id: '02',
-        title: 'Vision & AI Systems',
-        description: 'Harnessing neural networks and computer vision to automate high-stakes decision making.',
-        image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2000',
+        title: 'Model Training and Optimization',
+        description:
+          'Our team leverages state-of-the-art computer vision models and training techniques to optimize accuracy, latency, and scalability based on your operational requirements.',
+        image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=2000',
       },
       {
         id: '03',
-        title: 'Product Engineering',
-        description: 'Rapid R&D and deployment of proprietary software solutions that define market leadership.',
-        image: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=2000',
+        title: 'Labeling',
+        description:
+          'We provide an industry-leading labeling platform paired with expert human labeling services that deliver high-quality training data quickly and cost-effectively.',
+        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=2000',
+      },
+      {
+        id: '04',
+        title: 'Full-Stack Development & Integration',
+        description:
+          'We design and build intuitive user interfaces and robust front- and back-end systems, seamlessly integrating your computer vision solution into production-ready applications and workflows.',
+        image: 'https://images.unsplash.com/photo-1518773553398-650c184e0bb3?auto=format&fit=crop&q=80&w=2000',
+      },
+      {
+        id: '05',
+        title: 'AI-Powered Workflow Orchestration',
+        description:
+          'Our AI agents orchestrate complex workflows, choosing the right models for your data and resource needs to improve speed, accuracy, and efficiency.',
+        image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=2000',
+      },
+      {
+        id: '06',
+        title: 'Platform Development Services',
+        description:
+          'We design and build scalable, production-ready platforms that bring AI and vision solutions to life, handling architecture, integration, and deployment so your product is ready for real users and revenue.',
+        image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=2000',
       },
     ],
   },
@@ -89,40 +114,37 @@ const DEFAULT_HOME_CONFIG = {
     ],
   },
   assets: {
-    kicker: 'Intellectual Property',
-    title: 'Proprietary Assets',
-    description:
-      'Our internal R&D lab develops high-performance accelerators designed to compress transformation timelines for our enterprise partners.',
-    badgeLabel: 'Core Asset',
+    kicker: 'Product & Platform Offerings',
+    title: 'One platform for vision intelligence and beyond.',
+    description: 'Product & Platform Offerings',
+    badgeLabel: 'Item',
     linkLabel: 'Technical Specs',
     linkHref: '/products',
     items: [
       {
-        name: 'AppExe',
-        tagline: 'Rapid Deployment Framework',
+        name: 'VisionForge',
+        tagline: 'Where vision intelligence becomes scalable AI.',
         description:
-          'An enterprise-grade, zero-programming architecture that allows for the instantaneous deployment of cross-platform mobile ecosystems.',
-        features: ['Stateless Architecture', 'Biometric Integration', 'Legacy Sync'],
-        image: 'https://images.unsplash.com/photo-1551288049-bbbda546697a?auto=format&fit=crop&q=80&w=2000',
+          'One stop shop for industry-leading AI-based labeling, model training and optimization platform for individuals as well as teams.',
+        features: [
+          'Customizable workflow management for teams',
+          'Intuitive labeling tool with embedded VLM',
+          'Various choices of base models for training and optimization',
+        ],
+        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=2000',
         id: '01',
       },
       {
-        name: 'UncannyCV',
-        tagline: 'Computer Vision Suite',
+        name: 'D2B',
+        tagline: 'Platform to connect clients and drone pilots.',
         description:
-          'A proprietary neural network engine optimized for real-time object detection and spatial analysis in high-security environments.',
-        features: ['99.9% Inference Accuracy', 'Edge Computing Ready', 'Sub-10ms Latency'],
-        image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=2000',
+          'A marketplace for clients and pilots to be paired to unlock the benefits of diverse applicability for drone services.',
+        features: [
+          'For Clients: Pilot profiles and discovery, pilot selection, quote management, mission updates, deliverables and payment handling',
+          'For Pilots: Quote pricing and analysis, resource and equipment management, mission planning, flight logging, deliverables and payment handling',
+        ],
+        image: 'https://images.unsplash.com/photo-1473968512647-3e447244af8f?auto=format&fit=crop&q=80&w=2000',
         id: '02',
-      },
-      {
-        name: 'SmartDocs',
-        tagline: 'Cognitive Document Processing',
-        description:
-          'Advanced OCR and NLP pipeline that transforms unstructured regulatory data into actionable business intelligence.',
-        features: ['ISO 27001 Compliant', 'Automated Classification', 'Audit-Ready Logs'],
-        image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=2000',
-        id: '03',
       },
     ],
   },
@@ -156,7 +178,7 @@ export function Home() {
               <div className="h-[1px] w-12 bg-cyan-500"></div>
               <span className="text-cyan-500 tracking-[0.3em] text-xs font-bold uppercase">{config.hero.eyebrow}</span>
             </div>
-            <h1 className="text-5xl md:text-8xl font-light text-white leading-[1.1] mb-10 tracking-tight">
+            <h1 className="text-4xl md:text-6xl font-light text-white leading-[1.1] mb-10 tracking-tight">
               {config.hero.title}
             </h1>
             <p className="text-xl md:text-2xl text-slate-400 mb-12 max-w-2xl font-light leading-relaxed">
@@ -263,6 +285,9 @@ export function Home() {
           <div className="flex justify-between items-end mb-16">
             <div className="max-w-2xl">
               <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-6">{config.servicesCarousel.heading}</h2>
+              {config.servicesCarousel.description ? (
+                <p className="text-slate-500 font-light leading-relaxed mb-6">{config.servicesCarousel.description}</p>
+              ) : null}
               <div className="h-1 w-20 bg-slate-900"></div>
             </div>
             <div className="hidden md:flex gap-4">

@@ -1,31 +1,38 @@
 {
   "hero": {
-    "kicker": "Technical Portfolio",
-    "titleLines": ["Proprietary Assets &", "Technical Accelerators."],
-    "subtitle": "Advanced frameworks designed to compress digital transformation timelines for global entities."
+    "kicker": "Product & Platform Offerings",
+    "titleLines": ["One Platform for", "Vision Intelligence and Beyond."],
+    "subtitle": "Production-grade products built to turn AI capabilities into real-world business outcomes."
   },
   "products": [
     {
-      "name": "AppExe",
+      "name": "VisionForge",
       "id": "01",
-      "tagline": "Enterprise Mobility Engine",
-      "description": "A zero-latency, no-code architecture designed for the rapid deployment of mission-critical mobile ecosystems. AppExe bypasses traditional development bottlenecks.",
-      "features": ["Biometric Auth", "Stateless Architecture", "Legacy Sync"],
-      "metric": "60% TTM Reduction",
-      "metricLabel": "Target Yield",
-      "image": "https://images.unsplash.com/photo-1551288049-bbbda546697a?auto=format&fit=crop&q=80&w=1200",
+      "tagline": "Where vision intelligence becomes scalable AI.",
+      "description": "One stop shop for industry-leading AI-based labeling, model training and optimization platform for individuals as well as teams.",
+      "features": [
+        "Customizable workflow management for teams",
+        "Intuitive labeling tool with embedded VLM",
+        "Various choices of base models for training and optimization"
+      ],
+      "metric": "End-to-End Pipeline",
+      "metricLabel": "Platform Capability",
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200",
       "ctaLabel": "View Specs",
       "ctaHref": "/contact"
     },
     {
-      "name": "UncannyCV",
+      "name": "D2B",
       "id": "02",
-      "tagline": "Cognitive Vision Intelligence",
-      "description": "State-of-the-art computer vision models optimized for industrial-grade accuracy. UncannyCV provides the neural framework for spatial analysis.",
-      "features": ["Sub-10ms Inference", "Custom Training", "Edge-Compatible"],
-      "metric": "99.9% Accuracy",
-      "metricLabel": "Target Yield",
-      "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1200",
+      "tagline": "Platform to connect clients and drone pilots.",
+      "description": "A marketplace for clients and pilots to be paired to unlock the benefits of diverse applicability for drone services.",
+      "features": [
+        "For Clients: Pilot profiles and discovery, pilot selection, quote management, mission updates, deliverables and payment",
+        "For Pilots: Quote pricing, resource and equipment management, mission planning, flight logging, deliverables and payment"
+      ],
+      "metric": "Two-Sided Marketplace",
+      "metricLabel": "Operational Reach",
+      "image": "https://images.unsplash.com/photo-1473968512647-3e447244af8f?auto=format&fit=crop&q=80&w=1200",
       "ctaLabel": "View Specs",
       "ctaHref": "/contact"
     }
