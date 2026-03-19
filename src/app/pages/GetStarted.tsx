@@ -19,6 +19,27 @@ const DEFAULT_GET_STARTED_CONFIG = {
   form: {
     title: 'Project Inquiry Form',
     description: 'Share your project details and requirements.',
+    fields: {
+      nameLabel: 'Full Name *',
+      namePlaceholder: 'John Doe',
+      emailLabel: 'Email Address *',
+      emailPlaceholder: 'john@company.com',
+      companyLabel: 'Company Name *',
+      companyPlaceholder: 'Your Company',
+      phoneLabel: 'Phone Number',
+      phonePlaceholder: '+1 (555) 123-4567',
+      projectTypeLabel: 'Project Type *',
+      timelineLabel: 'Expected Timeline *',
+      budgetLabel: 'Budget Range *',
+      descriptionLabel: 'Project Description *',
+      descriptionPlaceholder:
+        "Tell us about your project goals, requirements, and any specific challenges you're facing...",
+      selectPlaceholder: 'Select an option',
+    },
+    buttons: {
+      submitLabel: 'Submit Project Request',
+      scheduleCallLabel: 'Schedule Call',
+    },
     projectTypes: [
       { label: 'Mobile App Development', value: 'mobile' },
       { label: 'Computer Vision Solution', value: 'computer-vision' },
@@ -72,8 +93,11 @@ const DEFAULT_GET_STARTED_CONFIG = {
     description: 'Our team is available Monday through Friday, 9 AM - 6 PM EST',
     email: 'hello@evossglobal.com',
     phone: '+1 (555) 123-4567',
+    emailLabel: 'Email us at',
+    phoneLabel: 'Call us at',
   },
   about: {
+    badgeLabel: 'About EvoSS Global',
     heading: 'A Decade of Innovation & Excellence',
     paragraphs: [
       'Founded in 2014 by CEO Srinivas Varadarajan, EvoSS Global has evolved from a visionary startup into a global leader in enterprise software solutions. Our journey is defined by unwavering commitment to client success and technological innovation.',
@@ -151,81 +175,84 @@ export function GetStarted() {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <FormField
-                  label="Full Name *"
+                  label={config.form.fields.nameLabel}
                   id="name"
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  placeholder="John Doe"
+                  placeholder={config.form.fields.namePlaceholder}
                   required
                 />
                 <FormField
-                  label="Email Address *"
+                  label={config.form.fields.emailLabel}
                   id="email"
                   name="email"
                   type="email"
                   value={formData.email}
                   onChange={handleChange}
-                  placeholder="john@company.com"
+                  placeholder={config.form.fields.emailPlaceholder}
                   required
                 />
               </div>
 
               <div className="grid md:grid-cols-2 gap-6">
                 <FormField
-                  label="Company Name *"
+                  label={config.form.fields.companyLabel}
                   id="company"
                   name="company"
                   value={formData.company}
                   onChange={handleChange}
-                  placeholder="Your Company"
+                  placeholder={config.form.fields.companyPlaceholder}
                   required
                 />
                 <FormField
-                  label="Phone Number"
+                  label={config.form.fields.phoneLabel}
                   id="phone"
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  placeholder="+1 (555) 123-4567"
+                  placeholder={config.form.fields.phonePlaceholder}
                 />
               </div>
 
               <SelectField
-                label="Project Type *"
+                label={config.form.fields.projectTypeLabel}
                 id="projectType"
                 name="projectType"
                 value={formData.projectType}
                 onChange={handleChange}
                 options={config.form.projectTypes}
+                placeholder={config.form.fields.selectPlaceholder}
               />
 
               <div className="grid md:grid-cols-2 gap-6">
                 <SelectField
-                  label="Expected Timeline *"
+                  label={config.form.fields.timelineLabel}
                   id="timeline"
                   name="timeline"
                   value={formData.timeline}
                   onChange={handleChange}
                   options={config.form.timelineOptions}
+                  placeholder={config.form.fields.selectPlaceholder}
                 />
                 <SelectField
-                  label="Budget Range *"
+                  label={config.form.fields.budgetLabel}
                   id="budget"
                   name="budget"
                   value={formData.budget}
                   onChange={handleChange}
                   options={config.form.budgetOptions}
+                  placeholder={config.form.fields.selectPlaceholder}
                 />
               </div>
 
               <TextareaField
-                label="Project Description *"
+                label={config.form.fields.descriptionLabel}
                 id="description"
                 name="description"
                 value={formData.description}
                 onChange={handleChange}
-                placeholder="Tell us about your project goals, requirements, and any specific challenges you're facing..."
+                placeholder={config.form.fields.descriptionPlaceholder}
                 required
               />
 
@@ -235,14 +262,14 @@ export function GetStarted() {
                   className="flex-1 inline-flex items-center justify-center px-8 py-4 bg-[#3BA5C8] hover:bg-[#2C8EAD] text-white rounded-lg transition-colors font-semibold text-lg"
                 >
                   <Send className="mr-2" size={20} />
-                  Submit Project Request
+                  {config.form.buttons.submitLabel}
                 </button>
                 <button
                   type="button"
                   className="inline-flex items-center justify-center px-8 py-4 border-2 border-gray-300 hover:border-[#3BA5C8] text-gray-700 hover:text-[#3BA5C8] rounded-lg transition-all font-semibold text-lg"
                 >
                   <Calendar className="mr-2" size={20} />
-                  Schedule Call
+                  {config.form.buttons.scheduleCallLabel}
                 </button>
               </div>
             </form>
@@ -281,7 +308,7 @@ export function GetStarted() {
           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">{config.contact.description}</p>
           <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
             <div>
-              <p className="text-gray-400 text-sm mb-2">Email us at</p>
+              <p className="text-gray-400 text-sm mb-2">{config.contact.emailLabel}</p>
               <a
                 href={`mailto:${config.contact.email}`}
                 className="text-2xl font-semibold text-[#3BA5C8] hover:text-cyan-300"
@@ -291,7 +318,7 @@ export function GetStarted() {
             </div>
             <div className="hidden sm:block w-px h-16 bg-gray-700"></div>
             <div>
-              <p className="text-gray-400 text-sm mb-2">Call us at</p>
+              <p className="text-gray-400 text-sm mb-2">{config.contact.phoneLabel}</p>
               <a
                 href={`tel:${config.contact.phone.replace(/[^+\d]/g, '')}`}
                 className="text-2xl font-semibold text-[#3BA5C8] hover:text-cyan-300"
@@ -308,7 +335,7 @@ export function GetStarted() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <div className="inline-block px-4 py-2 bg-[#3BA5C8]/20 rounded-full text-[#3BA5C8] font-semibold mb-6">
-                About EvoSS Global
+                {config.about.badgeLabel}
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">{config.about.heading}</h2>
               {config.about.paragraphs.map((paragraph) => (
@@ -418,6 +445,7 @@ function SelectField({
   value,
   onChange,
   options,
+  placeholder,
 }: {
   label: string;
   id: string;
@@ -425,6 +453,7 @@ function SelectField({
   value: string;
   onChange: (e: ChangeEvent<HTMLSelectElement>) => void;
   options: { label: string; value: string }[];
+  placeholder?: string;
 }) {
   return (
     <div>
@@ -439,7 +468,7 @@ function SelectField({
         onChange={onChange}
         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#3BA5C8] focus:border-transparent"
       >
-        <option value="">Select an option</option>
+        <option value="">{placeholder ?? 'Select an option'}</option>
         {options.map((option) => (
           <option key={option.value} value={option.value}>
             {option.label}

@@ -1,6 +1,6 @@
-import React, { useMemo, useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { usePageConfig } from '../hooks/usePageConfig';
 
 const DEFAULT_HOME_CONFIG = {
@@ -159,12 +159,7 @@ const DEFAULT_HOME_CONFIG = {
 export function Home() {
   const config = usePageConfig('home', DEFAULT_HOME_CONFIG);
 
-  const [activeService, setActiveService] = useState(0);
   const [hoveredIndex, setHoveredIndex] = useState(0);
-
-  const carouselCount = useMemo(() => Math.max(1, config.servicesCarousel.items.length), [config.servicesCarousel.items.length]);
-  const nextService = () => setActiveService((prev) => (prev + 1) % carouselCount);
-  const prevService = () => setActiveService((prev) => (prev - 1 + carouselCount) % carouselCount);
 
   return (
     <div className="bg-white text-slate-900 font-sans selection:bg-slate-900 selection:text-white">
@@ -279,7 +274,7 @@ export function Home() {
         </div>
       </div>
     </section>
-      {/* --- EDITORIAL SERVICES CAROUSEL --- */}
+      {/* --- EDITORIAL SERVICES GRID --- */}
       <section className="py-24 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex justify-between items-end mb-16">
@@ -290,36 +285,38 @@ export function Home() {
               ) : null}
               <div className="h-1 w-20 bg-slate-900"></div>
             </div>
-            <div className="hidden md:flex gap-4">
-              <button onClick={prevService} className="p-4 border border-slate-200 hover:bg-slate-900 hover:text-white transition-all">
-                <ChevronLeft size={24} />
-              </button>
-              <button onClick={nextService} className="p-4 border border-slate-200 hover:bg-slate-900 hover:text-white transition-all">
-                <ChevronRight size={24} />
-              </button>
-            </div>
           </div>
 
-          <div className="relative h-[600px] w-full group">
-            {config.servicesCarousel.items.map((service, index) => (
-              <div
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+            {config.servicesCarousel.items.map((service) => (
+              <article
                 key={service.id}
-                className={`absolute inset-0 transition-all duration-1000 flex flex-col md:flex-row gap-12 ${
-                  index === activeService ? "opacity-100 translate-x-0" : "opacity-0 translate-x-20 pointer-events-none"
-                }`}
+                className="group flex h-full flex-col overflow-hidden border border-slate-200 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-slate-900 hover:shadow-[0_24px_80px_rgba(15,23,42,0.12)]"
               >
-                <div className="w-full md:w-1/2 h-full overflow-hidden">
-                  <img src={service.image} alt={service.title} className="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-700" />
+                <div className="relative overflow-hidden">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="h-64 w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute left-5 top-5 border border-white/30 bg-slate-950/70 px-3 py-1 text-[10px] font-bold tracking-[0.3em] text-white backdrop-blur-sm">
+                    {service.id}
+                  </div>
                 </div>
-                <div className="w-full md:w-1/2 flex flex-col justify-center">
-                  <span className="text-6xl font-bold text-slate-100 mb-4">{service.id}</span>
-                  <h3 className="text-3xl font-bold mb-6">{service.title}</h3>
-                  <p className="text-xl text-slate-500 leading-relaxed mb-10">{service.description}</p>
-                  <Link to={config.servicesCarousel.linkHref} className="flex items-center gap-4 text-xs font-bold tracking-[0.2em] uppercase hover:text-cyan-600 transition-colors group/link">
-                    {config.servicesCarousel.linkLabel} <ArrowRight size={16} className="group-hover/link:translate-x-2 transition-transform" />
+                <div className="flex flex-1 flex-col p-8">
+                  <h3 className="mb-4 text-2xl font-bold text-slate-900">{service.title}</h3>
+                  <p className="mb-8 flex-1 text-base font-light leading-relaxed text-slate-500">
+                    {service.description}
+                  </p>
+                  <Link
+                    to={config.servicesCarousel.linkHref}
+                    className="flex items-center gap-4 text-xs font-bold uppercase tracking-[0.2em] text-slate-900 transition-colors hover:text-cyan-600 group/link"
+                  >
+                    {config.servicesCarousel.linkLabel}
+                    <ArrowRight size={16} className="transition-transform group-hover/link:translate-x-2" />
                   </Link>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </div>
@@ -340,7 +337,7 @@ export function Home() {
       </section>
 
       {/* --- PRODUCT SHOWCASE (Modern Alternating) --- */}
-      /* --- PROPRIETARY ASSETS (The "Monolith" Showcase) --- */
+
 <section className="py-32 bg-white">
   <div className="max-w-7xl mx-auto px-6 lg:px-8">
     <div className="flex flex-col md:flex-row justify-between items-baseline mb-24 border-b border-slate-900/10 pb-12">

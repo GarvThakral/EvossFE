@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { usePageConfig } from '../hooks/usePageConfig';
 
 const DEFAULT_PRODUCTS_CONFIG = {
+  productIdPrefix: 'ID //',
   hero: {
     kicker: 'Product & Platform Offerings',
     titleLines: ['One Platform for', 'Vision Intelligence and Beyond.'],
@@ -109,7 +110,7 @@ export function Products() {
               <div className="w-full lg:w-1/2">
                 <div className="relative group overflow-hidden border border-slate-200">
                   <div className="absolute top-4 left-4 z-20 bg-slate-900/80 backdrop-blur-sm text-white px-3 py-1 font-mono text-[9px] tracking-widest">
-                    ID // {product.id}
+                    {config.productIdPrefix} {product.id}
                   </div>
                   <img 
                     src={product.image} 

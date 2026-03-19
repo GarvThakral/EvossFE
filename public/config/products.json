@@ -1,4 +1,5 @@
 {
+  "productIdPrefix": "ID //",
   "hero": {
     "kicker": "Product & Platform Offerings",
     "titleLines": ["One Platform for", "Vision Intelligence and Beyond."],
@@ -62,4 +63,3 @@
     ]
   }
 }
-

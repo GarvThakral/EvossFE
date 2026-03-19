@@ -7,6 +7,26 @@
   "form": {
     "title": "Project Inquiry Form",
     "description": "Share your project details and requirements.",
+    "fields": {
+      "nameLabel": "Full Name *",
+      "namePlaceholder": "John Doe",
+      "emailLabel": "Email Address *",
+      "emailPlaceholder": "john@company.com",
+      "companyLabel": "Company Name *",
+      "companyPlaceholder": "Your Company",
+      "phoneLabel": "Phone Number",
+      "phonePlaceholder": "+1 (555) 123-4567",
+      "projectTypeLabel": "Project Type *",
+      "timelineLabel": "Expected Timeline *",
+      "budgetLabel": "Budget Range *",
+      "descriptionLabel": "Project Description *",
+      "descriptionPlaceholder": "Tell us about your project goals, requirements, and any specific challenges you're facing...",
+      "selectPlaceholder": "Select an option"
+    },
+    "buttons": {
+      "submitLabel": "Submit Project Request",
+      "scheduleCallLabel": "Schedule Call"
+    },
     "projectTypes": [
       { "label": "Mobile App Development", "value": "mobile" },
       { "label": "Computer Vision Solution", "value": "computer-vision" },
@@ -41,9 +61,12 @@
     "heading": "Prefer to Talk Directly?",
     "description": "Our team is available Monday through Friday, 9 AM - 6 PM EST",
     "email": "hello@evossglobal.com",
-    "phone": "+1 (555) 123-4567"
+    "phone": "+1 (555) 123-4567",
+    "emailLabel": "Email us at",
+    "phoneLabel": "Call us at"
   },
   "about": {
+    "badgeLabel": "About EvoSS Global",
     "heading": "A Decade of Innovation & Excellence",
     "paragraphs": [
       "Founded in 2014 by CEO Srinivas Varadarajan, EvoSS Global has evolved from a visionary startup into a global leader in enterprise software solutions. Our journey is defined by unwavering commitment to client success and technological innovation.",
