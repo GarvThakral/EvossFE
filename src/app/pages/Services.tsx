@@ -83,7 +83,7 @@ export function Services() {
     <div className="bg-white text-slate-900 selection:bg-slate-900 selection:text-white">
       
       {/* --- HERO SECTION --- */}
-      <section className="relative pt-32 pb-20 bg-[#050A10] text-white overflow-hidden">
+      <section className="relative overflow-hidden bg-[#0b1624] pt-32 pb-20 text-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-12">
             <div className="max-w-3xl">
@@ -187,7 +187,7 @@ export function Services() {
       </section>
 
       {/* --- CTA --- */}
-      <section className="py-32 bg-[#050A10] text-center">
+      <section className="bg-[#0b1624] py-32 text-center">
         <div className="max-w-3xl mx-auto px-6">
           <h2 className="text-4xl md:text-5xl font-light text-white mb-10 leading-tight">{config.cta.heading}</h2>
           <Link to={config.cta.buttonHref} className="inline-block border border-white text-white hover:bg-white hover:text-black px-12 py-6 text-sm font-bold uppercase tracking-[0.2em] transition-all">

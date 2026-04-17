@@ -128,7 +128,7 @@ export function About() {
   return (
     <div className="bg-white text-slate-900 selection:bg-slate-900 selection:text-white">
       {/* --- VISIONARY HERO --- */}
-      <section className="relative pt-40 pb-32 bg-[#050A10] text-white overflow-hidden">
+      <section className="relative overflow-hidden bg-[#0b1624] pt-40 pb-32 text-white">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-cyan-500/5 to-transparent" />
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
@@ -260,7 +260,7 @@ export function About() {
       </section>
 
       {/* --- GLOBAL PRESENCE MAPPING --- */}
-      <section className="py-32 bg-[#050A10] text-white">
+      <section className="bg-[#0b1624] py-32 text-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <div className="inline-flex items-center gap-2 mb-8">
             <Globe size={14} className="text-cyan-500" />

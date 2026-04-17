@@ -78,7 +78,7 @@ export function Products() {
     <div className="bg-white text-slate-900 selection:bg-slate-900 selection:text-white">
       
       {/* --- REFINED HERO (Smaller, cleaner) --- */}
-      <section className="relative pt-40 pb-32 bg-[#050A10] text-white">
+      <section className="relative bg-[#0b1624] pt-40 pb-32 text-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
           <div className="flex flex-col md:flex-row gap-16 items-start justify-between">
             <div className="max-w-2xl">
@@ -109,7 +109,7 @@ export function Products() {
               {/* Image Column - Controlled height */}
               <div className="w-full lg:w-1/2">
                 <div className="relative group overflow-hidden border border-slate-200">
-                  <div className="absolute top-4 left-4 z-20 bg-slate-900/80 backdrop-blur-sm text-white px-3 py-1 font-mono text-[9px] tracking-widest">
+                  <div className="absolute top-4 left-4 z-20 bg-slate-900/55 text-white px-3 py-1 font-mono text-[9px] tracking-widest backdrop-blur-[2px]">
                     {config.productIdPrefix} {product.id}
                   </div>
                   <img 
@@ -160,7 +160,7 @@ export function Products() {
 
       {/* --- REFINED CTA (Compressed) --- */}
 {/* --- STRATEGIC INQUIRY (Replaces Ready to Integrate) --- */}
-<section className="bg-[#050A10] border-t border-white/10">
+<section className="bg-[#0b1624] border-t border-white/10">
   <div className="max-w-7xl mx-auto px-6 lg:px-8">
     <div className="flex flex-col lg:flex-row">
       

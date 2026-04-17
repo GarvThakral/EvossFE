@@ -59,7 +59,7 @@ export function Contact() {
     <div className="bg-white text-slate-900 selection:bg-slate-900 selection:text-white">
       
       {/* --- MINIMAL HERO --- */}
-      <section className="relative pt-40 pb-20 bg-[#050A10] text-white">
+      <section className="relative bg-[#0b1624] pt-40 pb-20 text-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
             <div className="flex items-center gap-3 mb-6">

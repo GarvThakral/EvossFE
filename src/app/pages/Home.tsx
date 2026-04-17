@@ -210,9 +210,10 @@ export function Home() {
       <HomeHero hero={config.hero} metrics={config.metrics.items} />
 
       {/* --- INDUSTRY GRID (Deloitte Style) --- */}
-      <section className="relative bg-black py-24 overflow-hidden">
+      <section className="relative overflow-hidden bg-[#f5f4f0] py-24">
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#0b1624] via-[#56697d]/20 to-transparent" />
       {/* Background Image Layer - Transitions based on hover */}
-      <div className="absolute inset-0 opacity-40 transition-opacity duration-700">
+      <div className="absolute inset-0 opacity-18 transition-opacity duration-700 mix-blend-multiply">
         {config.sectors.items.map((sector, index) => (
           <img
             key={sector.id}
@@ -226,7 +227,7 @@ export function Home() {
       </div>
 
       {/* Overlay Gradient for Readability */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent"></div>
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(245,244,240,0.98)_0%,rgba(245,244,240,0.95)_38%,rgba(245,244,240,0.82)_68%,rgba(245,244,240,0.58)_100%)]"></div>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         <div className="flex flex-col lg:flex-row gap-16 items-start">
@@ -235,36 +236,36 @@ export function Home() {
 	          <div className="lg:w-1/3 pt-12">
 	            <div className="h-[1px] w-12 bg-cyan-500 mb-6"></div>
 	            <p className="text-[10px] tracking-[0.5em] text-cyan-500 uppercase font-bold mb-4">{config.sectors.kicker}</p>
-	            <h2 className="text-4xl md:text-5xl font-light text-white leading-tight mb-8">
+	            <h2 className="text-4xl md:text-5xl font-light text-slate-950 leading-tight mb-8">
 	              {config.sectors.titleLines[0]} <br /> {config.sectors.titleLines[1]}
 	            </h2>
-	            <p className="text-slate-400 font-light leading-relaxed">
+	            <p className="text-slate-600 font-light leading-relaxed">
 	              {config.sectors.description}
 	            </p>
 	          </div>
 
 	          {/* Right Side: Interactive List */}
 	          <div className="lg:w-2/3 w-full">
-	            <div className="border-t border-white/20">
+	            <div className="border-t border-slate-300/70">
 	              {config.sectors.items.map((sector, index) => (
 	                <div
 	                  key={sector.id}
 	                  onMouseEnter={() => setHoveredIndex(index)}
-	                  className="group relative flex items-center justify-between py-8 border-b border-white/10 cursor-pointer overflow-hidden"
+	                  className="group relative flex items-center justify-between overflow-hidden border-b border-slate-300/60 py-8 cursor-pointer"
                 >
                   <div className="flex items-baseline gap-8 transition-transform duration-500 group-hover:translate-x-4">
                     <span className={`font-mono text-xs transition-colors duration-300 ${
-                      hoveredIndex === index ? 'text-cyan-500' : 'text-slate-600'
+                      hoveredIndex === index ? 'text-cyan-600' : 'text-slate-400'
                     }`}>
                       0{index + 1}
                     </span>
                     <div>
                       <h3 className={`text-2xl md:text-3xl font-light transition-colors duration-300 ${
-                        hoveredIndex === index ? 'text-white' : 'text-slate-500'
+                        hoveredIndex === index ? 'text-slate-950' : 'text-slate-500'
                       }`}>
                         {sector.name}
                       </h3>
-                      <div className={`mt-2 max-w-sm text-sm text-slate-400 overflow-hidden transition-all duration-500 ${
+                      <div className={`mt-2 max-w-sm overflow-hidden text-sm text-slate-500 transition-all duration-500 ${
                         hoveredIndex === index ? 'max-h-20 opacity-100' : 'max-h-0 opacity-0'
                       }`}>
                         {sector.description}
@@ -276,7 +277,7 @@ export function Home() {
                   <div className={`transition-all duration-500 ${
                     hoveredIndex === index ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
                   }`}>
-                    <div className="h-12 w-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-black">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full border border-slate-900/20 text-slate-900 transition-colors hover:bg-slate-900 hover:text-white">
                       <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" className="rotate-45">
                         <path d="M1 1H14M14 1V14M14 1L1 14" stroke="currentColor" strokeWidth="2"/>
                       </svg>
@@ -315,7 +316,7 @@ export function Home() {
                     alt={service.title}
                     className="h-64 w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute left-5 top-5 border border-white/30 bg-slate-950/70 px-3 py-1 text-[10px] font-bold tracking-[0.3em] text-white backdrop-blur-sm">
+                  <div className="absolute left-5 top-5 border border-white/25 bg-slate-900/50 px-3 py-1 text-[10px] font-bold tracking-[0.3em] text-white backdrop-blur-[2px]">
                     {service.id}
                   </div>
                 </div>

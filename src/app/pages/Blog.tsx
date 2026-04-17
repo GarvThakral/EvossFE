@@ -34,7 +34,7 @@ export function Blog() {
     <div className="bg-white text-slate-900 selection:bg-slate-900 selection:text-white">
       
       {/* --- EDITORIAL HERO --- */}
-      <section className="relative pt-40 pb-24 bg-[#050A10] text-white">
+      <section className="relative bg-[#0b1624] pt-40 pb-24 text-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
           <div className="flex flex-col md:flex-row gap-16 items-start justify-between border-b border-white/10 pb-20">
             <div className="max-w-2xl">
@@ -128,7 +128,7 @@ export function Blog() {
       </section>
 
       {/* --- REFINED PARTNERSHIP CTA (Split Design) --- */}
-      <section className="bg-[#050A10] border-t border-white/10">
+      <section className="bg-[#0b1624] border-t border-white/10">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row">
             <div className="lg:w-1/2 py-24 lg:pr-16 border-b lg:border-b-0 lg:border-r border-white/10">

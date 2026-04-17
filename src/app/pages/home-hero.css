@@ -2,7 +2,7 @@
   position: relative;
   min-height: 100vh;
   padding-top: 96px;
-  background: #05090f;
+  background: linear-gradient(180deg, #112034 0%, #0b1624 100%);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -31,7 +31,7 @@
   right: -10%;
   width: 55%;
   height: 100%;
-  background: linear-gradient(160deg, #0a1628 0%, #071322 60%, transparent 100%);
+  background: linear-gradient(160deg, #173250 0%, #10243a 62%, transparent 100%);
   clip-path: polygon(18% 0, 100% 0, 100% 100%, 0% 100%);
   z-index: 0;
 }
@@ -42,7 +42,7 @@
   right: -80px;
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(0, 200, 255, 0.12) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(0, 200, 255, 0.18) 0%, transparent 72%);
   border-radius: 50%;
   z-index: 0;
   animation: home-hero-orb-pulse 6s ease-in-out infinite;
@@ -59,7 +59,7 @@
   left: -60px;
   width: 440px;
   height: 440px;
-  background: radial-gradient(circle, rgba(0, 120, 200, 0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.12) 0%, transparent 72%);
   border-radius: 50%;
   z-index: 0;
 }
@@ -96,7 +96,7 @@
   font-size: 9px;
   letter-spacing: 0.5em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.28);
   font-weight: 600;
   white-space: nowrap;
 }
@@ -124,12 +124,12 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  border: 1px solid rgba(0, 200, 255, 0.3);
+  border: 1px solid rgba(125, 211, 252, 0.24);
   padding: 8px 18px;
   font-size: 11px;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.68);
   font-weight: 600;
 }
 
@@ -207,7 +207,7 @@
 .home-hero-subtitle {
   font-weight: 300;
   font-size: clamp(18px, 2vw, 24px);
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.58);
   letter-spacing: 0.02em;
   margin-bottom: 52px;
   max-width: 560px;
@@ -303,7 +303,7 @@
 .home-hero-badge-ring {
   width: 160px;
   height: 160px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -315,7 +315,7 @@
   content: '';
   position: absolute;
   inset: 12px;
-  border: 1px solid rgba(0, 200, 255, 0.15);
+  border: 1px solid rgba(125, 211, 252, 0.2);
   border-radius: 50%;
 }
 

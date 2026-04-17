@@ -89,7 +89,7 @@ export function Navigation() {
 
       {/* Mobile Menu - Full Screen Overlay Style */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 bg-[#050A10] z-40 flex flex-col justify-center px-12 space-y-8 animate-in fade-in duration-300">
+        <div className="fixed inset-0 z-40 flex flex-col justify-center space-y-8 bg-[#0b1624]/96 px-12 backdrop-blur-sm animate-in fade-in duration-300">
           <div className="space-y-6">
             <p className="text-cyan-500 text-[9px] font-bold tracking-[0.5em] uppercase mb-12">Navigation</p>
             {navLinks.map((link) => (
