@@ -1,160 +1,204 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { usePageConfig } from '../hooks/usePageConfig';
+import './home-hero.css';
+import { DEFAULT_HOME_CONFIG, type HomeConfig } from './homeConfig';
 
-const DEFAULT_HOME_CONFIG = {
-  hero: {
-    eyebrow: '✦ Trusted Since 2013',
-    title: 'Unlocking the Power of Visual Intelligence',
-    subtitle:
-      'EvoSS Global is a trusted services company delivering advanced AI solutions, with a focus on computer vision and image-processing workflows.',
-    primaryCta: { label: 'Inquire Now', href: '/get-started' },
-    secondaryCta: { label: 'Our Capabilities', href: '/services' },
-  },
-  sectors: {
-    kicker: 'Trusted by Businesses Across Industries',
-    titleLines: ['Vision Intelligence', 'Across Industries'],
-    description: 'Helping teams automate, optimize, and make better decisions with vision intelligence.',
-    items: [
-      {
-        name: 'Financial Services',
-        id: 'FS',
-        image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=2000',
-        description: 'Algorithmic trading, secure banking infrastructure, and fintech evolution.',
+type HomeHeroConfig = HomeConfig['hero'];
+type HomeMetric = HomeConfig['metrics']['items'][number];
+
+function useCounter(target: string, duration = 1800, start = false) {
+  const [value, setValue] = useState('0');
+
+  useEffect(() => {
+    if (!start) {
+      setValue('0');
+      return;
+    }
+
+    let animationFrame = 0;
+    let startTime: number | null = null;
+    const numeric = parseFloat(target);
+    const suffix = target.replace(/[0-9.]/g, '');
+
+    const step = (timestamp: number) => {
+      if (startTime === null) {
+        startTime = timestamp;
+      }
+
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setValue(`${Math.floor(eased * numeric)}${suffix}`);
+
+      if (progress < 1) {
+        animationFrame = window.requestAnimationFrame(step);
+      } else {
+        setValue(target);
+      }
+    };
+
+    animationFrame = window.requestAnimationFrame(step);
+
+    return () => {
+      window.cancelAnimationFrame(animationFrame);
+    };
+  }, [duration, start, target]);
+
+  return value;
+}
+
+function HeroStatItem({
+  value,
+  label,
+  started,
+  delay,
+}: {
+  value: string;
+  label: string;
+  started: boolean;
+  delay: number;
+}) {
+  const counted = useCounter(value, 1600, started);
+
+  return (
+    <div
+      className={`home-hero-stat-item ${started ? 'animate-in' : ''}`}
+      style={{ animationDelay: `${delay}ms` }}
+    >
+      <span className="home-hero-stat-value">{started ? counted : '0'}</span>
+      <span className="home-hero-stat-label">{label}</span>
+    </div>
+  );
+}
+
+function HomeHero({
+  hero,
+  metrics,
+}: {
+  hero: HomeHeroConfig;
+  metrics: HomeMetric[];
+}) {
+  const [statsStarted, setStatsStarted] = useState(false);
+  const [loaded, setLoaded] = useState(false);
+  const statsRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const timeout = window.setTimeout(() => setLoaded(true), 80);
+    return () => window.clearTimeout(timeout);
+  }, []);
+
+  useEffect(() => {
+    const element = statsRef.current;
+
+    if (!element) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setStatsStarted(true);
+        }
       },
-      {
-        name: 'Healthcare',
-        id: 'HC',
-        image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=2000',
-        description: 'Precision medicine, digital health platforms, and HIPAA-compliant AI.',
-      },
-      {
-        name: 'Manufacturing',
-        id: 'MF',
-        image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=2000',
-        description: 'Industry 4.0, predictive maintenance, and supply chain automation.',
-      },
-      {
-        name: 'Government',
-        id: 'GV',
-        image: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=2000',
-        description: 'Public sector modernization and secure citizen engagement portals.',
-      },
-      {
-        name: 'Retail & E-commerce',
-        id: 'RT',
-        image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=2000',
-        description: 'Omnichannel logistics and hyper-personalized customer journeys.',
-      },
-      {
-        name: 'Education',
-        id: 'ED',
-        image: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=2000',
-        description: 'LMS ecosystems and AI-driven personalized learning paths.',
-      },
-    ],
-  },
-  servicesCarousel: {
-    heading: 'What We Do',
-    linkLabel: 'Explore Perspective',
-    linkHref: '/services',
-    description:
-      'You bring the idea, we take it to deployment, delivering end-to-end vision intelligence services including front- and back-end integration, comprehensive data labeling, model training and optimization, and production-ready portals built for online deployment and revenue generation.',
-    items: [
-      {
-        id: '01',
-        title: 'Computer Vision',
-        description: 'Advanced AI-powered visual recognition and analysis systems for intelligent automation.',
-        image: 'https://images.unsplash.com/photo-1649877508777-1554357604eb?auto=format&fit=crop&q=80&w=2000',
-      },
-      {
-        id: '02',
-        title: 'Model Training and Optimization',
-        description:
-          'Our team leverages state-of-the-art computer vision models and training techniques to optimize accuracy, latency, and scalability based on your operational requirements.',
-        image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=2000',
-      },
-      {
-        id: '03',
-        title: 'Labeling',
-        description:
-          'We provide an industry-leading labeling platform paired with expert human labeling services that deliver high-quality training data quickly and cost-effectively.',
-        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=2000',
-      },
-      {
-        id: '04',
-        title: 'Full-Stack Development & Integration',
-        description:
-          'We design and build intuitive user interfaces and robust front- and back-end systems, seamlessly integrating your computer vision solution into production-ready applications and workflows.',
-        image: 'https://images.unsplash.com/photo-1518773553398-650c184e0bb3?auto=format&fit=crop&q=80&w=2000',
-      },
-      {
-        id: '05',
-        title: 'AI-Powered Workflow Orchestration',
-        description:
-          'Our AI agents orchestrate complex workflows, choosing the right models for your data and resource needs to improve speed, accuracy, and efficiency.',
-        image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=2000',
-      },
-      {
-        id: '06',
-        title: 'Platform Development Services',
-        description:
-          'We design and build scalable, production-ready platforms that bring AI and vision solutions to life, handling architecture, integration, and deployment so your product is ready for real users and revenue.',
-        image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=2000',
-      },
-    ],
-  },
-  metrics: {
-    items: [
-      { value: '200+', label: 'ENGAGEMENTS' },
-      { value: '50+', label: 'GLOBAL ENTITIES' },
-      { value: '12', label: 'YEARS OF ALPHA' },
-      { value: '95%', label: 'RETENTION RATE' },
-    ],
-  },
-  assets: {
-    kicker: 'Product & Platform Offerings',
-    title: 'One platform for vision intelligence and beyond.',
-    description: 'Product & Platform Offerings',
-    badgeLabel: 'Item',
-    linkLabel: 'Technical Specs',
-    linkHref: '/products',
-    items: [
-      {
-        name: 'VisionForge',
-        tagline: 'Where vision intelligence becomes scalable AI.',
-        description:
-          'One stop shop for industry-leading AI-based labeling, model training and optimization platform for individuals as well as teams.',
-        features: [
-          'Customizable workflow management for teams',
-          'Intuitive labeling tool with embedded VLM',
-          'Various choices of base models for training and optimization',
-        ],
-        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=2000',
-        id: '01',
-      },
-      {
-        name: 'D2B',
-        tagline: 'Platform to connect clients and drone pilots.',
-        description:
-          'A marketplace for clients and pilots to be paired to unlock the benefits of diverse applicability for drone services.',
-        features: [
-          'For Clients: Pilot profiles and discovery, pilot selection, quote management, mission updates, deliverables and payment handling',
-          'For Pilots: Quote pricing and analysis, resource and equipment management, mission planning, flight logging, deliverables and payment handling',
-        ],
-        image: 'https://images.unsplash.com/photo-1473968512647-3e447244af8f?auto=format&fit=crop&q=80&w=2000',
-        id: '02',
-      },
-    ],
-  },
-  finalCta: {
-    heading: 'Ready to redefine your digital trajectory?',
-    buttonLabel: 'Initiate Consultation',
-    buttonHref: '/contact',
-    locations: ['New York', 'London', 'Singapore'],
-  },
-};
+      { threshold: 0.3 },
+    );
+
+    observer.observe(element);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  return (
+    <section className="home-hero-root">
+      <div className="home-hero-diagonal" />
+      <div className="home-hero-orb" />
+      <div className="home-hero-orb-secondary" />
+      <div className="home-hero-dots" />
+
+      <div className="home-hero-ticker">
+        <div className="home-hero-ticker-line" />
+        <span className="home-hero-ticker-text">{hero.tickerText}</span>
+      </div>
+
+      <div className="home-hero-content">
+        <div className="home-hero-topbar">
+          <div className="home-hero-pill">
+            <div className="home-hero-pill-dot" />
+            {hero.statusPill}
+          </div>
+        </div>
+
+        <div className={`home-hero-eyebrow ${loaded ? 'visible' : ''}`}>
+          <div className="home-hero-eyebrow-line" />
+          <span className="home-hero-eyebrow-text">{hero.eyebrow}</span>
+        </div>
+
+        <h1 className={`home-hero-headline ${loaded ? 'visible' : ''}`}>
+          {hero.titleLineOne}
+          <span className="home-hero-headline-accent">{hero.titleAccent}</span>
+          <em> {hero.titleEmphasis}</em>
+          <br />
+          {hero.titleLineTwo}
+        </h1>
+
+        <p className={`home-hero-subtitle ${loaded ? 'visible' : ''}`}>{hero.subtitle}</p>
+
+        <div className={`home-hero-cta-row ${loaded ? 'visible' : ''}`}>
+          <Link to={hero.primaryCta.href} className="home-hero-cta-primary">
+            {hero.primaryCta.label}
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path
+                d="M1 7h12M7 1l6 6-6 6"
+                stroke="#05090f"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </Link>
+          <div className="home-hero-cta-divider" />
+          <Link to={hero.secondaryCta.href} className="home-hero-cta-secondary">
+            {hero.secondaryCta.label}
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+              <path
+                d="M1 6h10M6 1l5 5-5 5"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </Link>
+        </div>
+
+        <div className={`home-hero-badge ${loaded ? 'visible' : ''}`}>
+          <div className="home-hero-badge-ring">
+            <div className="home-hero-badge-inner">
+              <div className="home-hero-badge-value">{hero.badgeValue}</div>
+              <div className="home-hero-badge-label">{hero.badgeLabel}</div>
+            </div>
+          </div>
+          <span className="home-hero-badge-tag">{hero.badgeTag}</span>
+        </div>
+      </div>
+
+      <div className="home-hero-stats" ref={statsRef}>
+        {metrics.map((metric, index) => (
+          <HeroStatItem
+            key={metric.label}
+            value={metric.value}
+            label={metric.label}
+            started={statsStarted}
+            delay={index * 120}
+          />
+        ))}
+      </div>
+    </section>
+  );
+}
 
 export function Home() {
   const config = usePageConfig('home', DEFAULT_HOME_CONFIG);
@@ -163,35 +207,7 @@ export function Home() {
 
   return (
     <div className="bg-white text-slate-900 font-sans selection:bg-slate-900 selection:text-white">
-      
-      {/* --- HERO SECTION --- */}
-      <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-[#050A10]">
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-          <div className="max-w-4xl">
-              <div className="flex items-center gap-4 mb-8">
-              <div className="h-[1px] w-12 bg-cyan-500"></div>
-              <span className="text-cyan-500 tracking-[0.3em] text-xs font-bold uppercase">{config.hero.eyebrow}</span>
-            </div>
-            <h1 className="text-4xl md:text-6xl font-light text-white leading-[1.1] mb-10 tracking-tight">
-              {config.hero.title}
-            </h1>
-            <p className="text-xl md:text-2xl text-slate-400 mb-12 max-w-2xl font-light leading-relaxed">
-              {config.hero.subtitle}
-            </p>
-            <div className="flex flex-wrap gap-6">
-              <Link to={config.hero.primaryCta.href} className="bg-cyan-600 hover:bg-cyan-500 text-white px-10 py-5 text-sm font-bold uppercase tracking-widest transition-all">
-                {config.hero.primaryCta.label}
-              </Link>
-              <Link to={config.hero.secondaryCta.href} className="border border-white/20 hover:border-white text-white px-10 py-5 text-sm font-bold uppercase tracking-widest transition-all">
-                {config.hero.secondaryCta.label}
-              </Link>
-            </div>
-          </div>
-        </div>
-        {/* Abstract Background Element */}
-        <div className="absolute bottom-0 right-0 w-1/3 h-full bg-gradient-to-l from-cyan-900/10 to-transparent"></div>
-      </section>
+      <HomeHero hero={config.hero} metrics={config.metrics.items} />
 
       {/* --- INDUSTRY GRID (Deloitte Style) --- */}
       <section className="relative bg-black py-24 overflow-hidden">
@@ -322,20 +338,6 @@ export function Home() {
         </div>
       </section>
 
-      {/* --- METRICS (High Contrast) --- */}
-      <section className="bg-slate-900 text-white py-24">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-0">
-            {config.metrics.items.map((m, i) => (
-              <div key={m.label} className={`md:px-12 ${i !== 0 ? 'md:border-l border-white/10' : ''}`}>
-                <div className="text-5xl font-light mb-4">{m.value}</div>
-                <div className="text-[10px] tracking-[0.3em] text-slate-500 font-bold uppercase">{m.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* --- PRODUCT SHOWCASE (Modern Alternating) --- */}
 
 <section className="py-32 bg-white">
@@ -423,3 +425,4 @@ export function Home() {
     </div>
   );
 }
+  

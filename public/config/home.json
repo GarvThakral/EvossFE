@@ -2,7 +2,16 @@
   "hero": {
     "eyebrow": "✦ Trusted Since 2013",
     "title": "Unlocking the Power of Visual Intelligence",
+    "titleLineOne": "Unlocking the",
+    "titleAccent": "Power of",
+    "titleEmphasis": "Visual",
+    "titleLineTwo": "Intelligence",
     "subtitle": "EvoSS Global is a trusted services company delivering advanced AI solutions, with a focus on computer vision and image-processing workflows.",
+    "statusPill": "Available for Engagements",
+    "tickerText": "Vision Intelligence · AI Solutions · Since 2013",
+    "badgeValue": "12",
+    "badgeLabel": "Years",
+    "badgeTag": "of Alpha",
     "primaryCta": { "label": "Inquire Now", "href": "/get-started" },
     "secondaryCta": { "label": "Our Capabilities", "href": "/services" }
   },
@@ -141,4 +150,3 @@
     "locations": ["New York", "London", "Singapore"]
   }
 }
-
